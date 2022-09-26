@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1(align="center") Productos
+  table(align="center")
+    tr
+      th="ID"
+      th="Nombre"
+      th="Precio"
+      th="Avatar"
+    if isEmpty
+      tr
+        td="No hay productos registrados aún"
+    each producto in productos
+      tr
+        td
+          a(
+            href=detailUrlBase + "/" + producto._id
+          )=producto._id
+        td=producto.nombre
+        td=producto.precio
+        td 
+          if producto.avatar
+              img(
+                src=producto.avatar
+                alt=producto.nombre
+                style="width:150px;height:160px;"
+                      )

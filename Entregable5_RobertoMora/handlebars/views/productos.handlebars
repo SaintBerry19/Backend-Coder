@@ -1,0 +1,26 @@
+<h1 align="center">Productos</h1>
+<table id="main" align="center">
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Precio</th>
+    <th>Avatar</th>
+  </tr>
+  {{#if isEmpty}}
+  <tr>
+    <td>No hay productos registrados aún</td>
+  </tr>
+  {{/if}}
+  {{#each productos}}
+    <tr>
+      <td><a href="{{@root.detailUrlBase}}/{{this._id}}">{{this._id}}</a></td>
+      <td>{{this.nombre}}</td>
+      <td>{{this.precio}}</td>
+      <td>
+        {{#if this.avatar}}
+          <img src="{{this.avatar}}" alt="{{this.nombre}}" style="width:150px;height:160px;">
+          {{/if}}
+      </td>
+    </tr>
+  {{/each}}
+</table>

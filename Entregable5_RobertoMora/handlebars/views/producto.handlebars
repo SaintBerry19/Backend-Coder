@@ -1,0 +1,11 @@
+<h1 align="center">Detalle de producto</h1>
+<div align="center">
+<p>ID: {{_id}}</p>
+<p>Nombre: {{nombre}}</p>
+<p>Precio: {{precio}}</p>
+<p>{{#if avatar}}
+  <img src="{{avatar}}" alt="{{nombre}}" style="width:350px;height:360px;">
+{{/if}}
+</p>
+<p><a href="http://localhost:3000/productos/">Regresar al listado de productos</a></p>
+</div>

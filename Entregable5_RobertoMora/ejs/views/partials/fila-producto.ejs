@@ -1,0 +1,11 @@
+<tr>
+  <td><a href="<%= detailUrlBase %>/<%= producto._id %>"><%= producto._id %></a></td>
+  <td><%= producto.nombre %></td>
+  <td><%= producto.precio %></td>
+  <% if (tieneAvatar) { %>
+    <td>
+        <img src="<%= producto.avatar %>" alt="<%=producto.nombre %>" style="width:150px;height:160px;">
+    </td>
+  <% } %>
+
+</tr>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Productos</title>
+</head>
+<body>
+  <h1 align="center">Productos</h1>
+  <div>
+  <table align= "center" id="main">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Avatar</th>
+    </tr>
+    <% if (isEmpty) { %>
+      <tr>
+        <td>No hay usuarios registrados aún</td>
+      </tr>
+    <% } %>
+    <% productos.forEach(function(producto) { %>
+      <%- include('partials/fila-producto', {producto: producto, detailUrlBase: detailUrlBase, tieneAvatar:!!producto.avatar}); %>
+    <% }); %>
+  </table>
+  </div>
+</body>
+</html>
