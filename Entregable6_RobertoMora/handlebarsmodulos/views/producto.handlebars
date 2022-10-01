@@ -1,0 +1,25 @@
+<h1 align="center">Detalle de producto</h1>
+<div
+  align="center"
+  style="border:2px solid white;margin-left:255px;margin-right:255px;"
+>
+  <p>ID: {{_id}}</p>
+  <p>Nombre: {{nombre}}</p>
+  <p>Precio: {{precio}}</p>
+  <p>{{#if avatar}}
+      <img
+        src="{{avatar}}"
+        alt="{{nombre}}"
+        style="width:350px;height:360px;"
+      />
+    {{/if}}
+  </p>
+</div>
+<p></p>
+<div align="center">
+  <p><a href="http://localhost:3000/ingresar">Ingresar nuevo producto</a></p>
+  <p><a href="http://localhost:3000/productos">Listado de productos</a></p>
+  <p><a href="http://localhost:3000/visualizador">Visualizador de productos
+      Tiempo Real</a></p>
+  <p><a href="http://localhost:3000">Menu Principal</a></p>
+</div>
