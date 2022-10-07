@@ -1,0 +1,30 @@
+{
+  "name": "entregable6",
+  "version": "1.0.0",
+  "description": "WebSockets",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "npx nodemon ./bin/www",
+    "dev:wait": "npx nodemon  ./bin/www"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "joi": "^17.6.0",
+    "lodash": "^4.17.21",
+    "mongodb": "^4.9.1",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.5.2",
+    "morgan": "~1.9.1",
+    "cookie-parser": "~1.4.4",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.2",
+    "nodemon": "^2.0.19"
+  }
+}
