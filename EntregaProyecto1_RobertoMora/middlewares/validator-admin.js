@@ -12,6 +12,6 @@ module.exports = async function validatorAdminMiddleware(req, res, next) {
     }
   } catch (error) {
     console.log(`${logPrefix} validación fallida:`, error);
-    res.status(400).send({ error : -1, descripcion: `ruta ${logPrefix} método 'y' no autorizada` })
+    res.status(400).send({ error : -1, descripcion: `ruta ${req.url} método ${req.method}  no autorizada` })
   }
 };

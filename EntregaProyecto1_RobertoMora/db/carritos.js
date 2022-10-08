@@ -4,13 +4,20 @@ const find = require("lodash/find");
 const remove = require("lodash/remove");
 const BD = require("../db/index");
 const { NotFoundError } = require("../utils/errores");
+const productos = require("./productos");
 
 let carritos = [];
 
 function crearCarrito() {
   const _id = new ObjectId();
   const create_time = new Date();
-  carritos.push({ _id: _id, time: create_time, productos: [] });
+  const update_time = new Date();
+  carritos.push({
+    _id: _id,
+    create_time: create_time,
+    update_time: update_time,
+    productos: [],
+  });
   return { insertedId: _id };
 }
 function obtenerCarritos(query = {}) {
@@ -55,11 +62,11 @@ function argregarProductoId(idCarrito, idProducto) {
     if (producto !== {}) {
       carrito.productos.map((item, index) => {
         if (item._id === idProducto) {
-          carrito.productos[index] = {
-            ...carrito.productos[index],
-            contador: item.contador + 1,
-          };
+          let contador = item.contador
+          carrito.productos[index] = producto
+          carrito.productos[index].contador= contador+1
           flag = true;
+          carrito.update_time = new Date()
         }
       });
       if (!flag) {

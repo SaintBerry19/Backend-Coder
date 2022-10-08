@@ -47,6 +47,9 @@ function actualizarPorId(idProducto, dataRequest) {
   const fieldTarget = [
     'nombre',
     'precio',
+    'descipcion',
+    'codigo',
+    'stock',
     'avatar',
     'estado',
   ]

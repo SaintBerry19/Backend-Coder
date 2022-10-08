@@ -7,7 +7,10 @@ const productoSchema = Joi.object({
     .max(30)
     .trim(true),
   precio: Joi.number()
-    .integer()
+    .integer(),
+  avatar: Joi.string()
+  .min(3)
+  .trim(true)
 })
 
 module.exports = async function validadorActualizarProductoMiddleware(req, res, next) {
