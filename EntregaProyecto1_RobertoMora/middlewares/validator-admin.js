@@ -1,4 +1,4 @@
-const admin = false;
+const admin = true;
 
 module.exports = async function validatorAdminMiddleware(req, res, next) {
   const logPrefix = "[validadorAdminMiddleware]";
