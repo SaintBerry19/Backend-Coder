@@ -8,7 +8,7 @@ class CarritosController {
       console.log(`${logPrefix} intentando crear Carrito.`)
       const result = BD.crearCarrito()
       const carrito = BD.obtenerCarritoPorId(result.insertedId)
-      console.log(`${logPrefix} Carrito creado con éxito.`)
+      console.log(`${logPrefix} Carrito ${result.insertedId} creado con éxito . `)
       return carrito
     } catch (error) {
       console.error(`${logPrefix} Ah ocurrido un error: ${error.message}`)

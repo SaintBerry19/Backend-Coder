@@ -5,7 +5,8 @@ const router = Router()
 
 router.post('/',(req, res, next) => {
   try {
-    CarritosController.crear()
+    const carrito=CarritosController.crear()
+    res.json(carrito)
     res.status(204).end()
   } catch (error) {
     next(error)
