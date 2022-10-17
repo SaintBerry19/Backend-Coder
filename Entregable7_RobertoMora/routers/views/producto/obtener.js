@@ -8,7 +8,7 @@ obtener.get('/productos/', (req, res, next) => {
     const productos = ProductosController.obtener(req.query)
     const data = {
       productos,
-      isEmpty: !productos.isLength,
+      isEmpty: !productos.length,
       detailUrlBase: `${process.env.BASE_HOST}/productos`,
     }
     res.render('productos', data)

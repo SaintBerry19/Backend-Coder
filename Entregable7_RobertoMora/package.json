@@ -4,8 +4,8 @@
   "description": "WebSockets",
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "npx nodemon --exec 'node -r dotenv/config' ./bin/www",
-    "dev:wait": "npx nodemon --exec 'node -r dotenv/config' ./bin/www"
+    "dev": "npx nodemon -r dotenv/config ./bin/www.js",
+    "dev:wait": "npx nodemon -r dotenv/config ./bin/www.js"
   },
   "keywords": [],
   "author": "",
