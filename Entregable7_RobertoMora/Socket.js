@@ -1,5 +1,6 @@
 import {Server} from "socket.io";
-import productos from "./db/productos"
+import {productos} from "./db/productos.js"
+
 let messages = [
   {
     email: 'Coder House',

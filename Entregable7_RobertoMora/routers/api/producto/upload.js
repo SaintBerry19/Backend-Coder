@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import multer  from 'multer'
-import actualizarAvatarPorId from '../../../controllers/productos.js'
-import BadRequestError from '../../../utils/errores.js'
+import ProductosController from '../../../controllers/productos.js'
+import {BadRequestError} from '../../../utils/errores.js'
 import validadorProductoExisteMiddleware from '../../../middlewares/validator-producto-existe.js'
 import validatorAdminMiddleware from '../../../middlewares/validator-admin.js'
 
@@ -29,7 +29,7 @@ routerupload.put('/:id/avatar',validatorAdminMiddleware,
       if (!req.file) {
         throw new BadRequestError('Debe subir una archivo valido para esta acción.')
       }
-      const result = actualizarAvatarPorId(req.producto._id, req.file)
+      const result = ProductosController.actualizarAvatarPorId(req.producto._id, req.file)
       res.json(result)
     } catch (error) {
       next(error)

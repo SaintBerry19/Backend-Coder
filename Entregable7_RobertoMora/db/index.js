@@ -1,10 +1,10 @@
-import ObjectId from 'mongodb'
-import pick from 'lodash'
-import filter from 'lodash'
-import find from 'lodash'
-import remove from 'lodash'
-import NotFoundError  from '../utils/errores.js'
-
+import {ObjectId} from 'mongodb'
+import pick from 'lodash/pick.js'
+import filter from 'lodash/filter.js'
+import find from 'lodash/find.js'
+import remove from 'lodash/remove.js'
+import {NotFoundError}  from '../utils/errores.js'
+import {productos} from '../db/productos.js'
 
 
 function crear(data) {
@@ -67,7 +67,7 @@ function borrarPorId(idProducto) {
   return producto
 }
 
-export default {
+export  {
   crear,
   obtener,
   obtenerPorId,

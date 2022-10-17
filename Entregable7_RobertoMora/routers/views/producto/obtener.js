@@ -8,7 +8,7 @@ obtener.get('/productos/', (req, res, next) => {
     const productos = ProductosController.obtener(req.query)
     const data = {
       productos,
-      isEmpty: !productos.length,
+      isEmpty: !productos.isLength,
       detailUrlBase: `${process.env.BASE_HOST}/productos`,
     }
     res.render('productos', data)
@@ -20,6 +20,7 @@ obtener.get('/productos/', (req, res, next) => {
 obtener.get('/productos/:id', (req, res, next) => {
   try {
     const producto = ProductosController.obtenerPorId(req.params.id)
+    console.log(producto)
     res.render('producto', producto)
   } catch (error) {
     next(error)

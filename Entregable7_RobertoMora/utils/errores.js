@@ -44,7 +44,7 @@ const errorHandler = function (err, req, res, next) {
   res.status(error.httpStatusCode).json(pick(error, fieldTarget))
 }
 
-export default  {
+export {
   BaseError,
   NotFoundError,
   BadRequestError,

@@ -6,7 +6,8 @@ const routeractualizar = Router()
 
 routeractualizar.put('/:id', validatorAdminMiddleware, (req, res, next) => {
   try {
-    ProductosController.actualizarPorId(req.params.id, req.body)
+    let producto=ProductosController.actualizarPorId(req.params.id, req.body)
+    res.json(producto)
     res.status(204).end()
   } catch (error) {
     next(error)

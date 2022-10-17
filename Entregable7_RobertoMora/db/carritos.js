@@ -1,10 +1,9 @@
-import remove from "lodash";
+import remove from "lodash/remove.js";
 import * as BD from "../db/index.js";
-import ObjectId from 'mongodb'
-import filter from 'lodash'
-import find from 'lodash'
-import NotFoundError from '../utils/errores.js'
-
+import {ObjectId} from 'mongodb'
+import filter from 'lodash/filter.js'
+import find from 'lodash/find.js'
+import {NotFoundError} from '../utils/errores.js'
 
 let carritos = [];
 
@@ -116,7 +115,7 @@ function borrarPorIdCarrito(idCarrito, idProducto) {
   }
 }
 
-export default {
+export {
   crearCarrito,
   obtenerCarritos,
   borrarCarritoId,

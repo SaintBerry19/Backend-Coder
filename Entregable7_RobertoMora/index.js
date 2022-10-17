@@ -5,14 +5,13 @@ import morgan from 'morgan';
 import handlebars from 'express-handlebars'
 import routerapi from './routers/api/index.js'
 import routerviews from './routers/views/index.js'
-import  errorHandler  from './utils/errores.js'
 import path from 'path'
 import {fileURLToPath} from 'url';
+
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename);
 
-// import dotenv from "dotenv/config"
 
 const app = express()
 
