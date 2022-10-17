@@ -3,10 +3,10 @@
 /**
  * Module dependencies.
  */
-import app from ('../index')
-import Socket from ('../Socket');
-import DBG from ('debug');
-import http from ('http');
+import app from '../index.js'
+import Socket from '../Socket.js';
+import DBG from 'debug';
+import http from 'http';
 
 const debug = DBG('EntregaProyecto2_RobertoMora:server'); 
 

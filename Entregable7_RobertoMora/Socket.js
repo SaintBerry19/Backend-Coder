@@ -10,7 +10,7 @@ let messages = [
 
 let io;
 
-export class Socket {
+export default class Socket {
   static init(httpServer) {
     console.log("Configurando el socket");
     io = new Server(httpServer);

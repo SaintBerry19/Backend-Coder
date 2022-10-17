@@ -30,7 +30,6 @@ app.set('views', './views')
 
 app.use('/api', routerapi)
 app.use('/', routerviews)
-app.use(errorHandler)
 
 // const server = app.listen(PORT, () => {
 //   console.log(`Servidor http esta escuchando en el puerto ${server.address().port}`)
