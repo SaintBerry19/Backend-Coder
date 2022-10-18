@@ -5,9 +5,12 @@
 
   const formProductos = document.getElementById("form-producto");
   const formMessage = document.getElementById('form-message');
-  const inputId = document.getElementById("id");
+  const inputId = document.getElementById("idtable");
   const inputNombre = document.getElementById("nombre");
   const inputPrecio = document.getElementById("precio");
+  const inputCodigo = document.getElementById("codigo");
+  const inputStock = document.getElementById("stock");
+  const inputDescripcion = document.getElementById("descripcion");
   const inputAvatar = document.getElementById("avatar");
   const inputEmail = document.getElementById("input-email");
   const inputMessage = document.getElementById("input-message");
@@ -19,7 +22,6 @@
     const li = document.createElement("li");
     li.innerHTML = `<p><strong><span style='color:green'>${data.email} [${data.date}]</span> </strong>:<i> ${data.message}</i></p>`;
     listMessages.appendChild(li);
-    // saveMessage(data)
   }
 
   formMessage.addEventListener("submit", (event) => {
@@ -78,6 +80,9 @@
       _id: inputId.value,
       nombre: inputNombre.value,
       precio: inputPrecio.value,
+      codigo: inputCodigo.value,
+      descripcion: inputDescripcion.value,
+      stock: inputStock.value,
       avatar: inputAvatar.value,
     });
     inputId.value = "";
@@ -86,6 +91,12 @@
     inputNombre.focus();
     inputPrecio.value = "";
     inputPrecio.focus();
+    inputCodigo.value = "";
+    inputCodigo.focus();
+    inputDescripcion.value = "";
+    inputDescripcion.focus();
+    inputStock.value = "";
+    inputStock.focus();
     inputAvatar.value = "";
     inputAvatar.focus();
   });

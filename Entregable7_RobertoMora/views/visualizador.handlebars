@@ -5,7 +5,7 @@
 >
   <h2>Ingresar producto</h2>
   <form id="form-producto">
-    <input type="text" name="id" id="id" required placeholder="ID" />
+    <input type="text" name="idtable" id="idtable" required placeholder="ID" />
     <input
       type="text"
       name="nombre"
@@ -20,7 +20,22 @@
       required
       placeholder="Precio"
     />
-    <input type="text" name="avatar" id="avatar" required placeholder="Url" />
+    <input type="text" name="stock" id="stock" required placeholder="Stock" />
+    <input
+      type="text"
+      name="codigo"
+      id="codigo"
+      required
+      placeholder="Codigo"
+    />
+    <input
+      type="text"
+      name="descripcion"
+      id="descripcion"
+      required
+      placeholder="Descripcion"
+    />
+    <input type="text" name="avatar" id="avatar" required placeholder="Url Imagen" />
     <button type="submit">Enviar</button>
   </form>
 </div>
@@ -44,21 +59,36 @@
 </div>
 <p></p>
 <p></p>
-  <table align="center" style="border:2px solid white;margin-left:auto;margin-right:auto;">
-     <thead>
-      <th style="text-align:center; font-size:35px">Chat De La Aplicación</th>
-     </thead>
-      <tr>
-        <td>
+<table
+  align="center"
+  style="border:2px solid white;margin-left:auto;margin-right:auto;"
+>
+  <thead>
+    <th style="text-align:center; font-size:35px">Chat De La Aplicación</th>
+  </thead>
+  <tr>
+    <td>
       <ul id="list-messages"> </ul>
-        </td>
-      </tr>
-  </table>
-  <form id="form-message">
-    <input type="text" name="email" id="input-email" placeholder="Ingresa tu email" required>
-    <input type="text" name="message" id="input-message" placeholder="Ingresa mensaje..." required>
-    <button type="submit">Enviar</button>
-  </form>
+    </td>
+  </tr>
+</table>
+<form id="form-message">
+  <input
+    type="text"
+    name="email"
+    id="input-email"
+    placeholder="Ingresa tu email"
+    required
+  />
+  <input
+    type="text"
+    name="message"
+    id="input-message"
+    placeholder="Ingresa mensaje..."
+    required
+  />
+  <button type="submit">Enviar</button>
+</form>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/javascripts/script.js"></script>
 <p></p>

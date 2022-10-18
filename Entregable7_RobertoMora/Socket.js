@@ -1,15 +1,16 @@
-import {Server} from "socket.io";
-import {productos} from "./db/productos.js"
+import { Server } from "socket.io";
+import { productos } from "./db/productos.js";
+import Contenedor from "./db/contenedor.js";
 import * as fs from "fs";
 
-let path= "./historial/historial.txt"
+let path = "./historial/historial.txt";
 let messages = [
   {
-    email: 'Coder House',
+    email: "Coder House",
     date: new Date().toLocaleString(),
-    message: 'Bienvenidos'
+    message: "Bienvenidos",
   },
-]
+];
 
 function saveMessage(objects) {
   let file, data, contador;
@@ -32,7 +33,7 @@ function saveMessage(objects) {
     fs.appendFileSync(path, `\t"message": "${objects.message}",\n\t`);
     fs.appendFileSync(path, `\t"id": ${objects.id}\n\t`);
     fs.appendFileSync(path, `}\n`);
-    fs.appendFileSync(path, "]");;
+    fs.appendFileSync(path, "]");
   }
 }
 
@@ -62,46 +63,67 @@ export default class Socket {
     io.on("connection", (clienteSocket) => {
       console.log("Nuevo cliente conectado", clienteSocket.id);
 
-      clienteSocket.emit("inicio-productos", productos)
+      clienteSocket.emit("inicio-productos", productos);
 
       clienteSocket.on("nuevo-producto", (data) => {
         productos.push({
-          _id: clienteSocket.id+data._id,
+          _id: clienteSocket.id + data._id,
           nombre: data.nombre,
           precio: data.precio,
           avatar: data.avatar,
+          stock: data.stock,
+          codigo: data.codigo,
+          descripcion: data.descripcion,
         });
         io.emit("notificacion-producto", {
-          _id: clienteSocket.id+data._id,
+          _id: clienteSocket.id + data._id,
           nombre: data.nombre,
           precio: data.precio,
           avatar: data.avatar,
+          stock: data.stock,
+          codigo: data.codigo,
+          descripcion: data.descripcion,
         });
+        data = { ...data, date: new Date().toLocaleString() };
+        let products = {
+          _id: clienteSocket.id + data._id,
+          nombre: data.nombre,
+          precio: data.precio,
+          avatar: data.avatar,
+          stock: data.stock,
+          codigo: data.codigo,
+          descripcion: data.descripcion,
+        };
+        let table = new Contenedor("productos");
+        table.createTable().then(() => table.insert(products));
       });
 
-      clienteSocket.emit('history-messages', messages)
-      clienteSocket.on('new-message', (data) => {
-          messages.push(
-            {
-              email: data.email,
-              date: new Date().toLocaleString(),
-              message: data.message
-            }
-          )
-          io.emit('notification-message', {
-              email: data.email,
-              date: new Date().toLocaleString(),
-              message: data.message
-            }
-          )
-          data={...data, date: new Date().toLocaleString()}
-          saveMessage(data)
-        })
+      clienteSocket.emit("history-messages", messages);
+      clienteSocket.on("new-message", (data) => {
+        messages.push({
+          email: data.email,
+          date: new Date().toLocaleString(),
+          message: data.message,
+        });
+        io.emit("notification-message", {
+          email: data.email,
+          date: new Date().toLocaleString(),
+          message: data.message,
+        });
+        data = { ...data, date: new Date().toLocaleString() };
+        let history = {
+          email: data.email,
+          date: data.date,
+          message: data.message,
+        };
+        let table = new Contenedor("messages");
+        table.createTable().then(() => table.insert(history));
+        saveMessage(data);
+      });
 
-
-        clienteSocket.on('disconection', () => {
-          console.log('Se desconecto el cliente con el id', clienteSocket.id)
-        })
+      clienteSocket.on("disconection", () => {
+        console.log("Se desconecto el cliente con el id", clienteSocket.id);
+      });
     });
   }
 }
