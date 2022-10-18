@@ -37,7 +37,7 @@ function saveMessage(objects) {
 }
 
 function historial(path, data) {
-  fs.writeFileSync(path, "[\n\t");
+  fs.writeFileSync(path, "[\n");
   data.map((object, id) => {
     object.id = id + 1;
     fs.appendFileSync(path, `\t{\n\t\t"email": "${object.email}",\n\t`);
