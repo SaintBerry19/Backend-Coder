@@ -1,9 +1,9 @@
-const { Router } = require('express')
-const CarritosController = require('../../../controllers/carrito')
+import { Router } from 'express'
+import CarritosController from '../../../controllers/carrito.js'
 
-const router = Router()
+const routercrearcarrito = Router()
 
-router.post('/',(req, res, next) => {
+routercrearcarrito.post('/',(req, res, next) => {
   try {
     const carrito=CarritosController.crear()
     res.json(carrito)
@@ -13,4 +13,4 @@ router.post('/',(req, res, next) => {
   }
 })
 
-module.exports = router
+export default routercrearcarrito

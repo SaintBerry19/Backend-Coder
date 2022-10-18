@@ -1,33 +1,34 @@
-const { Router } = require('express')
-const crearProducto = require('./producto/crear')
-const obtenerProducto = require('./producto/obtener')
-const actualizarProducto = require('./producto/actualizar')
-const borrarProducto = require('./producto/borrar')
-const uploadProducto = require('./producto/upload')
-const crearCarrito = require('./carrito/crearCarrito')
-const obtenerCarritos = require('./carrito/obtenerCarritos')
-const agregarProductoId = require('./carrito/agregarProductoId')
-const borrarCarrito = require('./carrito/borrarCarrito')
-const router = Router()
+import { Router } from 'express'
+import routercrear from './producto/crear.js'
+import routerobtener from './producto/obtener.js'
+import routeractualizar from './producto/actualizar.js'
+import routerborrar from './producto/borrar.js'
+import routerupload from './producto/upload.js'
+import routercrearcarrito from './carrito/crearCarrito.js'
+import routerobtenercarrito from './carrito/obtenerCarritos.js'
+import routeragregarcarrito from './carrito/agregarProductoId.js'
+import routerborrercarrito from './carrito/borrarCarrito.js'
+
+const routerapi = Router()
 
 
-    router.use('/productos', crearProducto, obtenerProducto, actualizarProducto, borrarProducto, uploadProducto)
-    router.use('/carrito', crearCarrito, obtenerCarritos, agregarProductoId, borrarCarrito)
-    router.get('*', (req, res, next) => {
+    routerapi.use('/productos', routercrear, routerobtener, routeractualizar, routerborrar, routerupload)
+    routerapi.use('/carrito', routercrearcarrito, routerobtenercarrito, routeragregarcarrito, routerborrercarrito)
+    routerapi.get('*', (req, res) => {
         res.status(404).send({ error : -2, descripcion: `ruta ${req.url} método ${req.method}  no implementada` })
       })
 
-    router.put('*', (req, res, next) => {
+    routerapi.put('*', (req, res) => {
         res.status(404).send({ error : -2, descripcion: `ruta ${req.url} método ${req.method}  no implementada` })
       })
 
-    router.post('*', (req, res, next) => {
+    routerapi.post('*', (req, res) => {
         res.status(404).send({ error : -2, descripcion: `ruta ${req.url} método ${req.method}  no implementada` })
       })
 
-    router.delete('*', (req, res, next) => {
+    routerapi.delete('*', (req, res) => {
         res.status(404).send({ error : -2, descripcion: `ruta ${req.url} método ${req.method}  no implementada` })
       })
 
 
-module.exports = router
+export default routerapi

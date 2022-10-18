@@ -3,12 +3,12 @@
 /**
  * Module dependencies.
  */
+import app from '../index.js'
+import Socket from '../Socket.js';
+import DBG from 'debug';
+import http from 'http';
 
-var app = require('../index');
-var Socket = require('../Socket');
-var debug = require('debug')('Entregable6_RobertoMora:server');
-var http = require('http');
-
+const debug = DBG('EntregaProyecto2_RobertoMora:server'); 
 
 /**
  * Get port from environment and store in Express.

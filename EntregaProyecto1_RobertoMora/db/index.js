@@ -1,10 +1,11 @@
-const ObjectId = require('mongodb').ObjectId
-const pick = require('lodash/pick')
-const filter = require('lodash/filter')
-const find = require('lodash/find')
-const remove = require('lodash/remove')
-const { NotFoundError } = require('../utils/errores')
-let productos = require("./productos")
+import {ObjectId} from 'mongodb'
+import pick from 'lodash/pick.js'
+import filter from 'lodash/filter.js'
+import find from 'lodash/find.js'
+import remove from 'lodash/remove.js'
+import {NotFoundError}  from '../utils/errores.js'
+import {productos} from '../db/productos.js'
+
 
 function crear(data) {
   const _id = new ObjectId()
@@ -66,7 +67,7 @@ function borrarPorId(idProducto) {
   return producto
 }
 
-module.exports = {
+export  {
   crear,
   obtener,
   obtenerPorId,

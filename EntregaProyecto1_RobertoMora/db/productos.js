@@ -1,4 +1,4 @@
-const productos = [
+export const productos = [
     {
       _id: '632b30614615e037e885489e',
       nombre: 'Trapeador',
@@ -48,4 +48,3 @@ const productos = [
       update_time: new Date(),
     },
   ]
-module.exports = productos;

@@ -1,6 +1,6 @@
 const admin = true;
 
-module.exports = async function validatorAdminMiddleware(req, res, next) {
+export default async function validatorAdminMiddleware(req, res, next) {
   const logPrefix = "[validadorAdminMiddleware]";
   try {
     console.log(`${logPrefix} intentando validar admin...`);

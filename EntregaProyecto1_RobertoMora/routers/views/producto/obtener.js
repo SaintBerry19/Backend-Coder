@@ -1,9 +1,9 @@
-const { Router } = require('express')
-const ProductosController = require('../../../controllers/productos')
+import { Router } from 'express'
+import ProductosController from '../../../controllers/productos.js'
 
-const router = Router()
+const obtener = Router()
 
-router.get('/productos/', (req, res, next) => {
+obtener.get('/productos/', (req, res, next) => {
   try {
     const productos = ProductosController.obtener(req.query)
     const data = {
@@ -17,13 +17,14 @@ router.get('/productos/', (req, res, next) => {
   }
 })
 
-router.get('/productos/:id', (req, res, next) => {
+obtener.get('/productos/:id', (req, res, next) => {
   try {
     const producto = ProductosController.obtenerPorId(req.params.id)
+    console.log(producto)
     res.render('producto', producto)
   } catch (error) {
     next(error)
   }
 })
 
-module.exports = router
+export default obtener

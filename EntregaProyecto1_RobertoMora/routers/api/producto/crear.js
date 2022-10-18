@@ -1,11 +1,10 @@
-const { Router } = require('express')
-const ProductosController = require('../../../controllers/productos')
-const validadorCrearProductoMiddleware = require('../../../middlewares/validador-crear-productos')
-const validatorAdminMiddleware = require('../../../middlewares/validator-admin')
+import { Router } from 'express'
+import ProductosController from '../../../controllers/productos.js'
+import validatorAdminMiddleware from '../../../middlewares/validator-admin.js'
 
-const router = Router()
+const routercrear = Router()
 
-router.post('/', validatorAdminMiddleware,validadorCrearProductoMiddleware, (req, res, next) => {
+routercrear.post('/', validatorAdminMiddleware, (req, res, next) => {
   try {
     ProductosController.crear(req.body)
     const data = {mensaje: 'Actualizacion: Producto ingresado con exito'}
@@ -15,4 +14,4 @@ router.post('/', validatorAdminMiddleware,validadorCrearProductoMiddleware, (req
   }
 })
 
-module.exports = router
+export default routercrear

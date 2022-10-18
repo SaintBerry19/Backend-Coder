@@ -1,4 +1,4 @@
-const pick = require('lodash/pick')
+import pick from 'lodash'
 
 class BaseError extends Error {
   constructor(message, metadata = {}) {
@@ -44,7 +44,7 @@ const errorHandler = function (err, req, res, next) {
   res.status(error.httpStatusCode).json(pick(error, fieldTarget))
 }
 
-module.exports = {
+export {
   BaseError,
   NotFoundError,
   BadRequestError,

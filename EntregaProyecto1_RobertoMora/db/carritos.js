@@ -1,10 +1,9 @@
-const ObjectId = require("mongodb").ObjectId;
-const filter = require("lodash/filter");
-const find = require("lodash/find");
-const remove = require("lodash/remove");
-const BD = require("../db/index");
-const { NotFoundError } = require("../utils/errores");
-const productos = require("./productos");
+import remove from "lodash/remove.js";
+import * as BD from "../db/index.js";
+import {ObjectId} from 'mongodb'
+import filter from 'lodash/filter.js'
+import find from 'lodash/find.js'
+import {NotFoundError} from '../utils/errores.js'
 
 let carritos = [];
 
@@ -116,7 +115,7 @@ function borrarPorIdCarrito(idCarrito, idProducto) {
   }
 }
 
-module.exports = {
+export {
   crearCarrito,
   obtenerCarritos,
   borrarCarritoId,

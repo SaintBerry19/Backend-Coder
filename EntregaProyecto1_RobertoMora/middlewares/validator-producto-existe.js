@@ -1,6 +1,6 @@
-const ProductosController = require('../controllers/productos')
+import ProductosController from '../controllers/productos.js'
 
-module.exports = async function validadorProductoExisteMiddleware(req, res, next) {
+export default async function validadorProductoExisteMiddleware(req, res, next) {
   const logPrefix = '[validadorProductoExisteMiddleware]'
   const prodcutoId = req.params.id
   try {

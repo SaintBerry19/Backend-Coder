@@ -1,8 +1,8 @@
-const { Router } = require('express')
-const router = Router()
-const validatorAdminMiddleware = require('../../../middlewares/validator-admin')
+import { Router } from 'express'
+import validatorAdminMiddleware from '../../../middlewares/validator-admin.js'
 
-router.get('/ingresar/', validatorAdminMiddleware,(req, res, next) => {
+const  ingresar = Router()
+ingresar.get('/ingresar/', validatorAdminMiddleware,(req, res, next) => {
   try {
     res.render('ingresar')
   } catch (error) {
@@ -10,4 +10,4 @@ router.get('/ingresar/', validatorAdminMiddleware,(req, res, next) => {
   }
 })
 
-module.exports = router
+export default ingresar

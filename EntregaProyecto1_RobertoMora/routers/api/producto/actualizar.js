@@ -1,17 +1,17 @@
-const { Router } = require('express')
-const ProductosController = require('../../../controllers/productos')
-const validadorActualizarProductoMiddleware = require('../../../middlewares/validador-actualizar-productos')
-const validatorAdminMiddleware = require('../../../middlewares/validator-admin')
+import { Router } from 'express'
+import ProductosController from '../../../controllers/productos.js'
+import validatorAdminMiddleware from '../../../middlewares/validator-admin.js'
 
-const router = Router()
+const routeractualizar = Router()
 
-router.put('/:id', validatorAdminMiddleware,validadorActualizarProductoMiddleware, (req, res, next) => {
+routeractualizar.put('/:id', validatorAdminMiddleware, (req, res, next) => {
   try {
-    ProductosController.actualizarPorId(req.params.id, req.body)
+    let producto=ProductosController.actualizarPorId(req.params.id, req.body)
+    res.json(producto)
     res.status(204).end()
   } catch (error) {
     next(error)
   }
 })
 
-module.exports = router
+export default routeractualizar

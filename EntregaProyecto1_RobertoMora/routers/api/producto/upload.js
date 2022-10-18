@@ -1,11 +1,11 @@
-const { Router } = require('express')
-const multer  = require('multer')
-const {actualizarAvatarPorId} = require('../../../controllers/productos')
-const {BadRequestError} = require('../../../utils/errores')
-const validadorProductoExisteMiddleware = require('../../../middlewares/validator-producto-existe')
-const validatorAdminMiddleware = require('../../../middlewares/validator-admin')
+import { Router } from 'express'
+import multer  from 'multer'
+import ProductosController from '../../../controllers/productos.js'
+import {BadRequestError} from '../../../utils/errores.js'
+import validadorProductoExisteMiddleware from '../../../middlewares/validator-producto-existe.js'
+import validatorAdminMiddleware from '../../../middlewares/validator-admin.js'
 
-const router = Router()
+const routerupload = Router()
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage })
 
-router.put('/:id/avatar',validatorAdminMiddleware,
+routerupload.put('/:id/avatar',validatorAdminMiddleware,
   validadorProductoExisteMiddleware,
   upload.single('avatar'),
   (req, res, next) => {
@@ -29,11 +29,11 @@ router.put('/:id/avatar',validatorAdminMiddleware,
       if (!req.file) {
         throw new BadRequestError('Debe subir una archivo valido para esta acción.')
       }
-      const result = actualizarAvatarPorId(req.producto._id, req.file)
+      const result = ProductosController.actualizarAvatarPorId(req.producto._id, req.file)
       res.json(result)
     } catch (error) {
       next(error)
     }
 })
 
-module.exports = router
+export default routerupload

@@ -1,15 +1,16 @@
-const { Router } = require('express')
-const CarritosController = require('../../../controllers/carrito')
+import  { Router } from 'express'
+import  CarritosController from '../../../controllers/carrito.js'
 
-const router = Router()
+const routeragregarcarrito = Router()
 
-router.post('/:id/productos/:id_prod', (req, res, next) => {
+routeragregarcarrito.post('/:id/productos/:id_prod', (req, res, next) => {
   try {
     CarritosController.agregarPorId(req.params.id,req.params.id_prod)
+    res.json({mensaje:'Se agrego el producto con exito'})
     res.status(204).end()
   } catch (error) {
     next(error)
   }
 })
 
-module.exports = router
+export default routeragregarcarrito
