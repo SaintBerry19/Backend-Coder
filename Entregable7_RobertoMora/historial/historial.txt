@@ -1,0 +1,32 @@
+[
+		{
+		"email": "robertom.95@hotmail.com",
+		"date": "10/17/2022, 8:11:59 PM",
+		"message": "Hola",
+		"id": 1
+	},
+	{
+		"email": "robertom.95@hotmail.com",
+		"date": "10/17/2022, 8:12:01 PM",
+		"message": "Hola",
+		"id": 2
+	},
+	{
+		"email": "robertom.95@hotmail.com",
+		"date": "10/17/2022, 8:12:09 PM",
+		"message": "Como estas?",
+		"id": 3
+	},
+	{
+		"email": "julio@gmail.com",
+		"date": "10/17/2022, 8:12:26 PM",
+		"message": "Callate",
+		"id": 4
+	},
+	{
+		"email": "robertom.95@hotmail.com",
+		"date": "10/17/2022, 8:12:46 PM",
+		"message": "Hola",
+		"id": 5
+	}
+]
