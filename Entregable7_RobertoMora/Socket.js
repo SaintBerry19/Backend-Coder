@@ -3,6 +3,24 @@ import { productos } from "./db/productos.js";
 import Contenedor from "./db/contenedor.js";
 import * as fs from "fs";
 
+const optionsmysql = {
+  client: "mysql2",
+  connection: {
+    host: "localhost",
+    port: 3306,
+    user: "robertomora",
+    password: "Senoragato90.",
+    database: "ecommerce",
+  },
+};
+
+const optionsqlite = {
+  client: 'sqlite3',
+  connection: {
+    filename: './ecommerce.sqlite'
+  },
+}
+
 let path = "./historial/historial.txt";
 let messages = [
   {
@@ -94,8 +112,10 @@ export default class Socket {
           codigo: data.codigo,
           descripcion: data.descripcion,
         };
-        let table = new Contenedor("productos");
+        let table = new Contenedor("productos",optionsmysql);
         table.createTable().then(() => table.insert(products));
+        let table2 = new Contenedor("productos",optionsqlite);
+        table2.createTable().then(() => table2.insert(products));
       });
 
       clienteSocket.emit("history-messages", messages);
@@ -116,8 +136,10 @@ export default class Socket {
           date: data.date,
           message: data.message,
         };
-        let table = new Contenedor("messages");
+        let table = new Contenedor("messages",optionsmysql);
         table.createTable().then(() => table.insert(history));
+        let table2 = new Contenedor("messages",optionsqlite);
+        table2.createTable().then(() => table2.insert(history));
         saveMessage(data);
       });
 

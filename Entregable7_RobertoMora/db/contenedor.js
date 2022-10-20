@@ -1,30 +1,13 @@
 import knex from "knex";
 
-// const options = {
-//   client: "mysql2",
-//   connection: {
-//     host: "localhost",
-//     port: 3306,
-//     user: "root",
-//     password: "MyNewPass",
-//     database: "ecommerce",
-//   },
-// };
-
-const options = {
-  client: 'sqlite3',
-  connection: {
-    filename: './ecommerce.sqlite'
-  },
-}
-
 export default class Contenedor {
-  constructor(table) {
+  constructor(table,options) {
     this.table = table;
+    this.options = options;
   }
 
   async createTable() {
-    const knexInstance = knex(options);
+    const knexInstance = knex(this.options);
     if (this.table === "messages") {
       try {
         const exist = await knexInstance.schema.hasTable(this.table);
@@ -74,7 +57,7 @@ export default class Contenedor {
     }
   }
   async insert(data) {
-    const knexInstance = knex(options);
+    const knexInstance = knex(this.options);
     if (this.path === 'messasges') {
       try {
         await knexInstance(`${this.table}`).insert(data);
