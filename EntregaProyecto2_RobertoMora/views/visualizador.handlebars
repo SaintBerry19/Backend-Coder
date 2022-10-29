@@ -1,0 +1,98 @@
+<h1 align="center">Productos en Tiempo Real</h1>
+<div
+  align="center"
+  style="border:2px solid white;margin-left:200px;margin-right:200px;"
+>
+  <h2>Ingresar producto</h2>
+  <form id="form-producto">
+    <input type="text" name="idtable" id="idtable" required placeholder="ID Temporal" />
+    <input
+      type="text"
+      name="nombre"
+      id="nombre"
+      required
+      placeholder="Nombre"
+    />
+    <input
+      type="text"
+      name="precio"
+      id="precio"
+      required
+      placeholder="Precio"
+    />
+    <input type="text" name="stock" id="stock" required placeholder="Stock" />
+    <input
+      type="text"
+      name="codigo"
+      id="codigo"
+      required
+      placeholder="Codigo"
+    />
+    <input
+      type="text"
+      name="descripcion"
+      id="descripcion"
+      required
+      placeholder="Descripcion"
+    />
+    <input type="text" name="avatar" id="avatar" required placeholder="Url Imagen" />
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+<p></p>
+
+<h2 align="center">Productos Disponibles</h2>
+<div>
+  <table
+    class="productsTable"
+    style="border:2px solid white;margin-left:auto;margin-right:auto;"
+  >
+    <thead class="productsTableHead">
+      <tr class="productsTableHeaderRow">
+        <th>ID del Producto</th>
+        <th>Nombre del Producto</th>
+        <th>Precio del Producto</th>
+        <th>Imagen del Producto</th>
+      </tr>
+    </thead>
+  </table>
+</div>
+<p></p>
+<p></p>
+<table
+  align="center"
+  style="border:2px solid white;margin-left:auto;margin-right:auto;"
+>
+  <thead>
+    <th style="text-align:center; font-size:35px">Chat De La Aplicación</th>
+  </thead>
+  <tr>
+    <td>
+      <ul id="list-messages"> </ul>
+    </td>
+  </tr>
+</table>
+<form id="form-message">
+  <input
+    type="text"
+    name="email"
+    id="input-email"
+    placeholder="Ingresa tu email"
+    required
+  />
+  <input
+    type="text"
+    name="message"
+    id="input-message"
+    placeholder="Ingresa mensaje..."
+    required
+  />
+  <button type="submit">Enviar</button>
+</form>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/javascripts/script.js"></script>
+<p></p>
+<div align="center">
+  <p><a href="http://localhost:8080/productos">Regresar al listado de productos</a></p>
+  <p><a href="http://localhost:8080">Menu Principal</a></p>
+</div>

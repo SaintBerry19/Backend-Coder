@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "c73b085f-3638-4ed5-a5a7-d144e97308e1",
+		"name": "User Profile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "105782"
+	},
+	"item": [
+		{
+			"name": "Crear Usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"/*\r",
+							"{\r",
+							"    \"nombre\": \"María\",\r",
+							"    \"apellido\": \"Rojas\",\r",
+							"    \"edad\": 21,\r",
+							"    \"telefono\": \"56900000001\",\r",
+							"    \"correo\": \"mariarojas@mail.com\"\r",
+							"}\r",
+							"{\r",
+							"    \"nombre\": \"Carlos\",\r",
+							"    \"apellido\": \"Gómez\",\r",
+							"    \"edad\": 21,\r",
+							"    \"telefono\": \"56900000002\",\r",
+							"    \"correo\": \"carlosgomez@mail.com\"\r",
+							"}\r",
+							"{\r",
+							"    \"nombre\": \"Adrian\",\r",
+							"    \"apellido\": \"López\",\r",
+							"    \"edad\": 21,\r",
+							"    \"telefono\": \"56900000003\",\r",
+							"    \"correo\": \"adrianlopez@mail.com\"\r",
+							"}\r",
+							"{\r",
+							"    \"nombre\": \"Ana\",\r",
+							"    \"apellido\": \"Guerra\",\r",
+							"    \"edad\": 21,\r",
+							"    \"telefono\": \"56900000004\",\r",
+							"    \"correo\": \"anaguerra@mail.com\"\r",
+							"}\r",
+							"*/"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Pedro\",\r\n    \"apellido\": \"Ruiz\",\r\n    \"edad\": 21,\r\n    \"telefono\": \"56900000005\",\r\n    \"correo\": \"pedroruiz@mail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subir avatar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/C:/Users/ejrojasp/Downloads/Pabellon-criollo-1.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/usuarios/{{user-id}}/avatar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuarios",
+						"{{user-id}}",
+						"avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Usuarios",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "telefono",
+							"value": "56900000001",
+							"disabled": true
+						},
+						{
+							"key": "correo",
+							"value": "pedrorojas@mail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Usuario por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/usuarios/{{user-id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuarios",
+						"{{user-id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Usuario por ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"estado\": \"inactivo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/usuarios/{{user-id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuarios",
+						"{{user-id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Usuario por ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/usuarios/{{user-id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuarios",
+						"{{user-id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
