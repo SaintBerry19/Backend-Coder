@@ -1,0 +1,45 @@
+<div style="   display: flex; justify-content: space-around; align-items: center;"><h1 align="center">Sesion de: {{username.username}}</h1>
+<form style="width: 15%; height: 15%;" name="form1" method="post" action="/logout">
+  <label>
+  <input name="submit2" type="submit" id="submit2" value="log out">
+  </label>
+</form></div>
+<h1 align="center">Productos</h1>
+<table text-align="center"
+  id="main"
+  style="border:2px solid white;margin-left:auto;margin-right:auto;"
+>
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Precio</th>
+    <th>Avatar</th>
+    <th>Ver Detalles</th>
+  </tr>
+  {{#if isEmpty}}
+    <tr>
+      <td>No hay productos registrados aún</td>
+    </tr>
+  {{/if}}
+  {{#each value}}
+    <tr>
+      <td>{{this._id}}</td>
+      <td>{{this.nombre}}</td>
+      <td>{{this.precio}}</td>
+      <td>
+        {{#if this.avatar}}
+          <img
+            src="{{this.avatar}}"
+            alt="{{this.nombre}}"
+            style="width:150px;height:160px;"
+          />
+        {{/if}}
+      </td>
+      <td><form action="{{@root.detailUrlBase}}/{{this._id}}">
+          <button type="submit">Ver Producto</button></form></td>
+  {{/each}}
+</table>
+<p></p>
+<p align="center"><a href="http://localhost:8080/ingresar">Ingresar nuevo producto</a></p>
+<p align="center"><a href="http://localhost:8080/visualizador">Visualizador de productos Tiempo Real</a></p>
+<p align="center"><a href="http://localhost:8080/home">Menu Principal</a></p>
