@@ -1,0 +1,18 @@
+<h1 align="center">Registro de Usuario</h1>
+<div align="center"
+  align="center"
+  style="border:2px solid white;margin-left:200px;margin-right:200px;">
+  <h2>Ingresa datos de usuario:</h2>
+  <form action="/api/usuarios/" method="post">
+    <input type="text" name="nombre" required placeholder="Nombre" />
+    <input type="text" name="apellido" required placeholder="Apellido" />
+    <input type="text" name="username" required placeholder="Username" />
+    <input type="text" name="password" required placeholder="Constrasena" />
+    <input type="number" name="age" required placeholder="Edad" />
+    <input type="text" name="phone" required placeholder="Telefono" />
+    <input type="text" name="email" required placeholder="Ejemplo@correo.com" />
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+<p></p>
+<p align="center"><a href="http://localhost:8080/login">Ya estas registrado? Inicia Sesion</a></p>
