@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { usuariosDao } from "../../../daos/index.js";
 import validatorAdminMiddleware from "../../../middlewares/validator-admin.js";
+import { encryptPassword} from '../../../utils.js'
 
 const routercrearusuarios = Router();
 
@@ -11,7 +12,11 @@ routercrearusuarios.post("/", validatorAdminMiddleware, (req, res, next) => {
         const data = { mensaje: "Username ya utilizado" };
         res.render("registroerror", data);
       } else {
-        usuariosDao.guardar(req.body);
+        const newUser = {
+          ...req.body,
+          password: encryptPassword(req.body.password),
+        }
+        usuariosDao.guardar(newUser);
         const data = {
           mensaje:
             "Actualizacion: Usuario ingresado con exito, puede iniciar sesion",
