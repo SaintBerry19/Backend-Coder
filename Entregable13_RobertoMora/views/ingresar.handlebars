@@ -1,0 +1,30 @@
+<div style="   display: flex; justify-content: space-around; align-items: center;"><h1 align="center">Sesion de: {{username}}</h1>
+<form style="width: 15%; height: 15%;" name="form1" method="post" action="/logout">
+  <label>
+  <input name="submit2" type="submit" id="submit2" value="log out">
+  </label>
+</form></div>
+<h1 align="center">Productos</h1>
+<div
+  align="center"
+  style="border:2px solid white;margin-left:200px;margin-right:200px;"
+>
+  <h2>Ingresar producto</h2>
+  <div align="center"> <p>{{mensaje}}</p> </div>
+  <form action="/api/productos/" method="post">
+    <input type="text" name="nombre" required placeholder="Nombre" />
+    <input type="number" name="precio" required placeholder="Precio" />
+    <input type="text" name="avatar" placeholder="Url" />
+      <input type="text" name="codigo" required placeholder="Codigo" />
+    <input type="number" name="stock" required placeholder="Stock" />
+    <input type="text" name="descripcion" placeholder="Descripcion" />
+    <button type="submit">Enviar</button>
+  </form>
+  <p><a href="{{base_host}}/productos">Regresar al listado de productos</a></p>
+  <p><a href="{{base_host}}/visualizador">Visualizador de productos
+      Tiempo Real</a></p>
+  <p><a href="{{base_host}}/info">Informacion de Plataforma</a></p>
+  <p><a href="{{base_host}}/home">Menu Principal</a></p>
+
+</div>
+<p></p>

@@ -1,0 +1,14 @@
+<h1 align="center">Login Usuario</h1>
+<div align="center"
+  align="center"
+  style="border:2px solid white;margin-left:200px;margin-right:200px;">
+  <h2>Ingresar nombre de usuario:</h2>
+  <div align="center"> <p>{{mensaje}}</p> </div>
+  <form action="/login/" method="post">
+    <input type="text" name="username" required placeholder="Username" />
+    <input type="text" name="password" required placeholder="Password" />
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+<p></p>
+<p align="center"><a href="{{base_url}}/registro">No estas registrado? Registrate!</a></p>
