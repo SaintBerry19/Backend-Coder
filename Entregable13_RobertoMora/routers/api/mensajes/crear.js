@@ -7,7 +7,6 @@ const routercrearmensajes = Router()
 routercrearmensajes.post('/', validatorAdminMiddleware, (req, res, next) => {
   try {
     mensajesDao.guardar(req.body)
-    console.log(req.body)
     const data = {mensaje: 'Actualizacion: Mensaje ingresado con exito'}
     res.json(data)
   } catch (error) {

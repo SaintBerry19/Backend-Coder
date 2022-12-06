@@ -173,7 +173,7 @@ export default class Socket {
           message: data.message,
         },normalizer(messages));
         axios
-          .post(`${{base_url}}/api/mensajes/`,data)
+          .post(`${base_host}/api/mensajes/`,data)
           .then((response) => {
             response.status
           })
