@@ -7,36 +7,65 @@ import app from '../index.js'
 import Socket from '../Socket.js';
 import DBG from 'debug';
 import http from 'http';
-import {puerto,mode} from '../index.js'
+import minimist from "minimist";
+import cluster from 'cluster'
+import os from 'os'
 
 const debug = DBG('EntregaProyecto2_RobertoMora:server'); 
 
-/**
- * Get port from environment and store in Express.
- */
+const opts = {
+  default: {
+    puerto: 8080,
+    mode: "FORK",
+  },
+  alias: {
+    p: "puerto",
+    m: "mode",
+  },
+};
+const params = minimist(process.argv.slice(2), opts);
+const puerto = params.puerto;
+const mode = params.mode;
+export const base_host= `http://localhost:${puerto}`
 
+if (mode === "CLUSTER" && cluster.isPrimary) {
+  // Require node in version 16 or higher. Other versions call isMaster property.
+  let num = os.cpus().length
+  console.log(`cpu length ${num}`)
+  console.log("Conectado al puerto:", puerto);
+  console.log('Base host:', base_host)
+  console.log('Usando el modo:', mode)
+  for (let i = 0; i < os.cpus().length; i++) {
+    cluster.fork();
+  }
+  cluster.on("exit", (worker, code, signal) => {
+    console.log(
+      `worker ${worker.process.pid} | code ${code} | signal ${signal}`
+    );
+    console.log("Starting a new worker...");
+    cluster.fork();
+  });
+} else {
 var port = normalizePort(puerto);
-export const base_host= `http://localhost:${port}`
-console.log("Conectado al puerto:", puerto, process.pid);
-console.log('Base host:', base_host)
-console.log('Usando el modo:', mode)
+console.log("Numero de proceso:", process.pid);
 app.set('port', port);
 
+var server = http.createServer(app);
+Socket.init(server)
 
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+}
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
-Socket.init(server)
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.

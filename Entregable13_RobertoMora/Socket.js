@@ -104,7 +104,6 @@ let io;
 
 export default class Socket {
   static init(httpServer) {
-    console.log("Configurando el socket");
     io = new Server(httpServer);
     io.on("connection", (clienteSocket) => {
       console.log("Nuevo cliente conectado", clienteSocket.id);
