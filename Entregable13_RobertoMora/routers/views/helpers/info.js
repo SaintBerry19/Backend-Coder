@@ -1,12 +1,14 @@
 import { Router } from "express";
 import auth from "../../../middlewares/authorization.js"
 import { base_host } from "../../../bin/www.js";
+import os from 'os'
 
 
 const info = Router()
 
 info.get("/info", auth, (req, res, next) => {
   let data ={
+    num:os.cpus().length,
     directorio: process.cwd(),
     idProcess: process.pid,
     version: process.version,

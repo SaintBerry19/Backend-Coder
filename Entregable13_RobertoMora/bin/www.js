@@ -24,17 +24,18 @@ const opts = {
   },
 };
 const params = minimist(process.argv.slice(2), opts);
-const puerto = params.puerto;
+export const puerto = params.puerto;
 const mode = params.mode;
 export const base_host= `http://localhost:${puerto}`
 
+
 if (mode === "CLUSTER" && cluster.isPrimary) {
   // Require node in version 16 or higher. Other versions call isMaster property.
-  let num = os.cpus().length
-  console.log(`cpu length ${num}`)
   console.log("Conectado al puerto:", puerto);
   console.log('Base host:', base_host)
   console.log('Usando el modo:', mode)
+  let num = os.cpus().length
+  console.log(`cpu length ${num}`)
   for (let i = 0; i < os.cpus().length; i++) {
     cluster.fork();
   }
@@ -46,6 +47,7 @@ if (mode === "CLUSTER" && cluster.isPrimary) {
     cluster.fork();
   });
 } else {
+  
 var port = normalizePort(puerto);
 console.log("Numero de proceso:", process.pid);
 app.set('port', port);

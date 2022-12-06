@@ -9,7 +9,6 @@ import info from '../views/helpers/info.js'
 import logout from '../views/helpers/logout.js'
 import registro from '../views/helpers/registro.js'
 
-
 const routerviews = Router()
 routerviews.use('/',ingresar,visualizador,obtener,test,login,home,logout,registro,info)
 
