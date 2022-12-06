@@ -65,8 +65,13 @@ if (mode === "CLUSTER" && cluster.isPrimary) {
       secret: "3biXMV8#m5s7",
       resave: true,
       saveUninitialized: true,
+      
     })
   );
+  app.get('/datos', (req, res) => {
+    console.log(`Here from process ${process.pid} litening in port ${PORT}.`);
+    res.send(`<h1>Servidor express en ${PORT} - PID ${process.pid} - ${(new Date()).toLocaleString()}</h1>`)
+  })
 
   app.use(cors());
   app.use(express.static(path.join(__dirname, "public/")));
