@@ -70,3 +70,8 @@ Req/Bytes counts sampled once per second.
 # of samples: 20
 
 2k requests in 20.04s, 2.6 MB read
+
+///////////////////////////////////////
+Finalmente como conclusion al hacer la comparasion de los tiempos de respuesta, podemos ver como utilizar 
+metodos no bloquiantes y clustering permite un mejor manejo de la carga de trabajo y nos permite generar
+mejor respuesta del sevidor.
