@@ -26,7 +26,7 @@ app.use(
     //   retries: 2, // El número de reintentos para obtener datos de sesión de un archivo de sesión. Predeterminado a 5
     // }),
     store: new MongoStore({
-      mongoUrl: process.env.MONGODB_URI,
+      mongoUrl: 'mongodb+srv://RobertoMora:Senoragato90.@backendcourse.83wj5zx.mongodb.net/ecommerce?retryWrites=true&w=majority',
       ttl: 600,
     }),
     secret: "3biXMV8#m5s7",

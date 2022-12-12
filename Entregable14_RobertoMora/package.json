@@ -4,7 +4,12 @@
   "description": "WebSockets",
   "scripts": {
     "start": "node ./bin/www.js",
-    "dev": "npx nodemon -r dotenv/config ./bin/www.js "
+    "test": "node benchmark.js",
+    "dev": "npx nodemon -r dotenv/config ./bin/www.js ",
+    "prof": "npx nodemon -r dotenv/config --prof ./bin/www.js ",
+    "inspect": "npx nodemon -r dotenv/config --inspect ./bin/www.js ",
+    "0x": "0x ./bin/www.js "
+
   },
   "keywords": [],
   "author": "",
@@ -15,6 +20,8 @@
     "@handlebars/allow-prototype-access": "^1.0.5",
     "@socket.io/cluster-adapter": "^0.2.1",
     "@socket.io/sticky": "^1.0.2",
+    "artillery": "^1.5.6",
+    "autocannon": "^7.10.0",
     "axios": "^1.2.1",
     "bcrypt": "^5.1.0",
     "compression": "^1.7.4",
@@ -26,7 +33,7 @@
     "express-session": "^1.17.3",
     "firebase": "^9.13.0",
     "firebase-admin": "^11.2.0",
-    "forever": "^0.14.2",
+    "forever": "^4.0.3",
     "joi": "^17.6.0",
     "knex": "^2.3.0",
     "lodash": "^4.17.21",
@@ -46,7 +53,8 @@
   },
   "devDependencies": {
     "dotenv": "^16.0.3",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "autocannon": "^7.10.0"
   },
   "type": "module"
 }
