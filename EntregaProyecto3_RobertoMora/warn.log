@@ -15,3 +15,4 @@
 {"code":"ESOCKET","command":"CONN","level":"error"}
 {"code":"ESOCKET","command":"CONN","level":"error"}
 {"code":"ESOCKET","command":"CONN","level":"error"}
+{"level":"warn","message":{"descripcion":"ruta /favicon.ico método GET  no implementada","error":-2}}

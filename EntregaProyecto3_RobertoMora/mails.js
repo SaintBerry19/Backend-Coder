@@ -21,8 +21,8 @@ export default async function sendMail(body) {
   
   try {
     const result = await transporter.sendMail(opts)
-    console.log('result', result)
+    logger.info(result)
   } catch (error) {
-    console.error('error', error)
+    logger.error(error)
   }
 }

@@ -231,3 +231,9 @@
 {"level":"info","message":{"base_url":"http://localhost:8080","mensaje":"Actualizacion: Usuario ingresado con exito, puede iniciar sesion"}}
 {"level":"info","message":{"base_url":"http://localhost:8080"}}
 {"level":"info","message":{"base_url":"http://localhost:8080","mensaje":"Actualizacion: Usuario ingresado con exito, puede iniciar sesion"}}
+{"level":"info","message":{"msg":"login"}}
+{"level":"warn","message":{"descripcion":"ruta /favicon.ico método GET  no implementada","error":-2}}
+{"level":"info","message":{"base_url":"http://localhost:8080"}}
+{"level":"info","message":{"base_url":"http://localhost:8080","mensaje":"Actualizacion: Usuario ingresado con exito, puede iniciar sesion"}}
+{"level":"info","message":{"base_url":"http://localhost:8080"}}
+{"level":"info","message":{"base_url":"http://localhost:8080","mensaje":"Actualizacion: Usuario ingresado con exito, puede iniciar sesion"}}
