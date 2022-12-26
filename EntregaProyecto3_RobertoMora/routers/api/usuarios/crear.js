@@ -4,6 +4,7 @@ import validatorAdminMiddleware from "../../../middlewares/validator-admin.js";
 import { encryptPassword } from "../../../utils.js";
 import { base_host } from "../../../bin/www.js";
 import logger from "../../../logs/logger.js";
+import sendMail from "../../../mails.js";
 
 const routercrearusuarios = Router();
 
@@ -19,14 +20,16 @@ routercrearusuarios.post("/", validatorAdminMiddleware, (req, res, next) => {
           ...req.body,
           password: encryptPassword(req.body.password),
         };
-        usuariosDao.guardar(newUser);
-        const data = {
-          mensaje:
-            "Actualizacion: Usuario ingresado con exito, puede iniciar sesion",
-          base_url: base_host,
-        };
-        logger.info(data);
-        res.render("login", data);
+        usuariosDao.guardar(newUser).then((value) => {
+          const data = {
+            mensaje:
+              "Actualizacion: Usuario ingresado con exito, puede iniciar sesion",
+            base_url: base_host,
+          };
+          logger.info(data);
+          sendMail(newUser)
+          res.render("login", data);
+        });
       }
     });
   } catch (error) {

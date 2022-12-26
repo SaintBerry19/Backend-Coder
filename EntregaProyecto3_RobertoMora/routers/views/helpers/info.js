@@ -21,7 +21,6 @@ info.get("/info", auth, (req, res, next) => {
       base_url: base_host,
     };
     logger.info(data)
-    console.log(data)
     res.render("info", data);
   } catch (error) {
     logger.error(error);

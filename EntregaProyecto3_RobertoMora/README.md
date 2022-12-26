@@ -75,3 +75,5 @@ Req/Bytes counts sampled once per second.
 Finalmente como conclusion al hacer la comparasion de los tiempos de respuesta, podemos ver como utilizar 
 metodos no bloquiantes y clustering permite un mejor manejo de la carga de trabajo y nos permite generar
 mejor respuesta del sevidor.
+
+////////////////////////////////////////

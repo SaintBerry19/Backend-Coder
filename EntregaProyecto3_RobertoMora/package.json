@@ -9,7 +9,6 @@
     "prof": "npx nodemon -r dotenv/config --prof ./bin/www.js ",
     "inspect": "npx nodemon -r dotenv/config --inspect ./bin/www.js ",
     "0x": "0x ./bin/www.js "
-
   },
   "keywords": [],
   "author": "",
@@ -44,6 +43,7 @@
     "morgan": "~1.9.1",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^2.3.3",
+    "nodemailer": "^6.8.0",
     "normalizr": "^3.6.1",
     "session-file-store": "^1.5.0",
     "socket.io": "^4.5.2",
@@ -52,9 +52,9 @@
     "winston": "^3.8.2"
   },
   "devDependencies": {
+    "autocannon": "^7.10.0",
     "dotenv": "^16.0.3",
-    "nodemon": "^2.0.19",
-    "autocannon": "^7.10.0"
+    "nodemon": "^2.0.19"
   },
   "type": "module"
 }
