@@ -1,9 +1,20 @@
-<h1 align="center">Registro de Usuario</h1>
+<h1 style="text-align:center;margin:0">Informacion del Usuario</h1>
+<div
+    style="text-align: center;"
+  >
+    <h2 style="margin:0">{{username.username}}</h2>
+    <p>{{userid}}</p>
+    <img
+      src="{{avatar}}"
+      alt="avatar"
+      style="margin:1vh;text-align:center ;width:150px;height:160px;"
+    />
+  </div>
 <div align="center"
   align="center"
   style="border:2px solid white;margin-left:200px;margin-right:200px;">
-  <h2>Ingresa datos de usuario:</h2>
-  <form action="/api/usuarios/" method="post">
+  <h2>Editar datos de usuario:</h2>
+  <form action="/api/usuarios/{{userid}}/update" method="post">
     <input type="text" name="nombre" required placeholder="Nombre" />
     <input type="text" name="apellido" required placeholder="Apellido" />
     <input type="text" name="username" required placeholder="Username" />
@@ -15,5 +26,3 @@
     <button type="submit">Enviar</button>
   </form>
 </div>
-<p></p>
-<p align="center"><a href="{{base_url}}/login">Ya estas registrado? Inicia Sesion</a></p>

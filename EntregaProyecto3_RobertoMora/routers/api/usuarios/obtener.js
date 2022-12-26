@@ -1,12 +1,12 @@
 import { Router } from 'express'
-import {productosDao} from '../../../daos/index.js'
+import { usuariosDao } from "../../../daos/index.js";
 import logger from '../../../logs/logger.js'
 
 const routerobtenerusarios = Router()
 
 routerobtenerusarios.get('/', (req, res, next) => {
   try {
-    productosDao.listarAll().then((value)=>{  
+    usuariosDao.listarAll().then((value)=>{  
       logger.info(value)
       res.json(value)})
   } catch (error) {
@@ -17,7 +17,7 @@ routerobtenerusarios.get('/', (req, res, next) => {
 
 routerobtenerusarios.get('/:id', (req, res, next) => {
   try {
-    productosDao.listar(req.params.id).then((value)=>{  
+    usuariosDao.listar(req.params.id).then((value)=>{  
       logger.info(value)
       res.json(value)})
   } catch (error) {

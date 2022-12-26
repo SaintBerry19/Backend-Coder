@@ -25,7 +25,7 @@ class ContenedorMongoDB {
     return result
   }
 
-  async actualizar(id,method,data) {
+  async actualizar(id,data) {
     const result = await this.collection.updateOne({ _id: id }, { $set: data })
     return result
 

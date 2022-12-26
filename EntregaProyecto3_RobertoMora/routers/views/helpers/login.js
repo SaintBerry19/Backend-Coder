@@ -40,6 +40,7 @@ login.post("/login", (req, res, next) => {
         res.render("loginerror", data);
       } else {
         if (isValidPassword(req.body.password, value[0].password)) {
+          let avatar = value[0].avatar;
           let username = req.body.username;
           req.session.username = username;
           req.session.contador += 1;
@@ -47,8 +48,8 @@ login.post("/login", (req, res, next) => {
           let data = {
             username: {
               username: req.session.username,
-              contador: req.session.contador,
               base_url: base_host,
+              avatar: avatar,
             },
           };
           logger.info(data);
