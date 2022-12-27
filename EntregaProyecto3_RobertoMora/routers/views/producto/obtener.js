@@ -18,7 +18,7 @@ obtener.get("/productos/",auth, (req, res, next) => {
         detailUrlBase: `${base_host}/productos`,
         base_url: base_host
       };
-      logger.info(data)
+      // logger.info(data)
       res.render("productos", data);
     });
   } catch (error) {
