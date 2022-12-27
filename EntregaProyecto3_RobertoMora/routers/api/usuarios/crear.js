@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { usuariosDao } from "../../../daos/index.js";
+import { carritosDao } from "../../../daos/index.js";
 import validatorAdminMiddleware from "../../../middlewares/validator-admin.js";
 import { encryptPassword } from "../../../utils.js";
 import { base_host } from "../../../bin/www.js";
@@ -20,15 +21,18 @@ routercrearusuarios.post("/", validatorAdminMiddleware, (req, res, next) => {
           ...req.body,
           password: encryptPassword(req.body.password),
         };
-        usuariosDao.guardar(newUser).then((value) => {
+        usuariosDao.guardar(newUser).then((usuario) => {
+          let userid={userid:usuario._id.toString()};
           const data = {
             mensaje:
               "Actualizacion: Usuario ingresado con exito, puede iniciar sesion",
             base_url: base_host,
           };
           logger.info(data);
-          sendMail(newUser)
-          res.render("login", data);
+          sendMail(newUser);
+          carritosDao.guardar(userid).then((value) => {
+            res.render("login", data);
+          });
         });
       }
     });

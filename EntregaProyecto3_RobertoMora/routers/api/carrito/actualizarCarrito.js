@@ -5,9 +5,9 @@ import logger from '../../../logs/logger.js'
 
 const routeractualizarcarrito = Router()
 
-routeractualizarcarrito.put('/:id/:method', (req, res, next) => {
+routeractualizarcarrito.post('/:id/update', (req, res, next) => {
   try {
-    carritosDao.actualizar(req.params.id,req.params.method, req.body)
+    carritosDao.actualizar(req.params.id, req.body)
     let msg= {mensaje:'Se actualizo el carrito'}
     logger.info(msg)
     res.json(msg)
