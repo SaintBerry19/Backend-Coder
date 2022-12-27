@@ -6,3 +6,12 @@
 {"level":"warn","message":{"descripcion":"ruta /daos/index.js método GET  no implementada","error":-2}}
 {"level":"warn","message":{"descripcion":"ruta /daos/index.js método GET  no implementada","error":-2}}
 {"level":"warn","message":{"descripcion":"ruta /daos/index método GET  no implementada","error":-2}}
+{"level":"warn","message":{"descripcion":"ruta /favicon.ico método GET  no implementada","error":-2}}
+{"level":"warn","message":{"descripcion":"ruta /carrito/63aa88f27eabd9d41a30a197/update método GET  no implementada","error":-2}}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"warn","message":{"descripcion":"ruta /carrito/63aa88f27eabd9d41a30a197/update método GET  no implementada","error":-2}}
+{"level":"error"}
+{"level":"error"}
