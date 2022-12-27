@@ -1,7 +1,5 @@
-let carrito = [];
-let total
+let ids=[];
 let contenedorCarrito = document.getElementById("contenedorCarrito");
-let contenedor = document.getElementById("contenedorProductos");
 
 function agregarCarrito(id) {
   let verificador = document.getElementById(`productoid` + id);
@@ -9,10 +7,22 @@ function agregarCarrito(id) {
     let cantidad = document.getElementById("productocantidad" + id);
     let nuevaCantidad = document.getElementById(`quantity` + id).valueAsNumber;
     cantidad.innerText = Number(cantidad.innerText) + nuevaCantidad;
-    let subtotal = document.getElementById("subtotal" + id);
-    subtotal.innerText =
+    ids.forEach((element)=>{
+      if (element.id===id){
+        element.cantidad = Number(cantidad.innerText)
+      }
+    })
+    console.log('if',ids)
+    if(Number(cantidad.innerText)<1){
+      verificador.remove()
+      ids = ids.filter(element=>element.id!==id)
+      console.log(ids)
+    }
+    else{  
+      let subtotal = document.getElementById("subtotal" + id);
+      subtotal.innerText =
       Number(cantidad.innerText) *
-      Number(document.getElementById(`precio` + id).innerText);
+      Number(document.getElementById(`precio` + id).innerText);}
   } else {
     let tarjetaProducto = document.createElement("tr");
     let producto_id = document.createElement("td");
@@ -47,5 +57,9 @@ function agregarCarrito(id) {
     tarjetaProducto.appendChild(producto_quantity);
     tarjetaProducto.appendChild(subtotal);
     contenedorCarrito.appendChild(tarjetaProducto);
+    ids.push({id:id,cantidad:document.getElementById(
+      `quantity` + id
+    ).valueAsNumber})
+    console.log("else",ids);
   }
 }

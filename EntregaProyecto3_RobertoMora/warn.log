@@ -1,2 +1,8 @@
 {"level":"warn","message":{"descripcion":"ruta /favicon.ico método GET  no implementada","error":-2}}
 {"level":"warn","message":{"descripcion":"ruta /public/javascripts/carrito.js método GET  no implementada","error":-2}}
+{"level":"warn","message":{"descripcion":"ruta /favicon.ico método GET  no implementada","error":-2}}
+{"level":"warn","message":{"descripcion":"ruta /favicon.ico método GET  no implementada","error":-2}}
+{"level":"warn","message":{"descripcion":"ruta /daos/index método GET  no implementada","error":-2}}
+{"level":"warn","message":{"descripcion":"ruta /daos/index.js método GET  no implementada","error":-2}}
+{"level":"warn","message":{"descripcion":"ruta /daos/index.js método GET  no implementada","error":-2}}
+{"level":"warn","message":{"descripcion":"ruta /daos/index método GET  no implementada","error":-2}}
