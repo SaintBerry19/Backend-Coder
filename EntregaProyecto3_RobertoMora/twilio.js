@@ -7,7 +7,7 @@ export  async function sms(phone) {
   client.messages
     .create({
       body: "Su pedido ha sido recibido y se encuentra en proceso.",
-      from: process.env.TWILIO_PHONE_NUMBER,
+      messagingServiceSid: process.env.TWILIO_PHONE_NUMBER,
       to: phone,
     })
     .then((message) => console.log(message.sid))

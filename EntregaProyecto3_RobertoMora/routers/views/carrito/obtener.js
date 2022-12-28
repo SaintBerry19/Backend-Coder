@@ -5,8 +5,8 @@ import auth from "../../../middlewares/authorization.js";
 import { base_host } from "../../../bin/www.js";
 import logger from "../../../logs/logger.js";
 import { sms } from "../../../twilio.js";
+import { whatsapptext } from "../../../whatsapp.js";
 import sendMail from "../../../gmail.js";
-
 
 const carrito = Router();
 
@@ -79,7 +79,8 @@ carrito.post("/carrito/comprar", auth, (req, res, next) => {
       let userid = userinfo[0]._id.toString();
       let avatar = userinfo[0].avatar;
       let telefono = userinfo[0].phone;
-      let email=userinfo[0].email;
+      let whatsapp = `whatsapp:+521${telefono.toString()}`;
+      let email = userinfo[0].email;
       telefono = `+52${telefono.toString()}`;
       carritosDao.buscar(userid).then((carritoinfo) => {
         let carritoid = carritoinfo[0]._id.toString();
@@ -94,10 +95,12 @@ carrito.post("/carrito/comprar", auth, (req, res, next) => {
               mensaje: "Se realizo la compra con exito!",
             },
           };
-          sendMail(email,carritoinfo[0].productos);
+          sendMail(email, carritoinfo[0].productos);
           logger.info(actualizar);
           sms(telefono).then(() => {
-            res.render("menu", username);
+            whatsapptext(whatsapp, email, carritoinfo[0].productos).then(() => {
+              res.render("menu", username);
+            });
           });
         });
       });
