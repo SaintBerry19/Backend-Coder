@@ -8,11 +8,12 @@ import home from '../views/helpers/home.js'
 import info from '../views/helpers/info.js'
 import logout from '../views/helpers/logout.js'
 import registro from '../views/helpers/registro.js'
+import carrito from '../views/carrito/obtener.js'
 import user from '../views/helpers/user.js'
 import logger from '../../logs/logger.js'
 
 const routerviews = Router()
-routerviews.use('/',ingresar,visualizador,obtener,test,login,home,logout,registro,info,user)
+routerviews.use('/',ingresar,visualizador,obtener,test,login,home,logout,registro,info,user,carrito)
 
 routerviews.get('/', (req, res, next) => {
   try {

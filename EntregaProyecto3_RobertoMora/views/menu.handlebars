@@ -1,12 +1,13 @@
+  <div align="center"> <p>{{username.mensaje}}</p> </div>
 <div
   style="margin:5vh;padding:2vh;display: flex;justify-content: space-evenly;border:2px solid white;"
 >
-  <div align="center"> <p>{{username.mensaje}}</p> </div>
   <div style="text-align:center">
     <h2 >Menu de opciones:</h2>
     <p><a href="{{base_url}}/info">Informacion de Plataforma</a></p>
     <p><a href="{{base_url}}/ingresar">Ingresar nuevo producto</a></p>
     <p><a href="{{base_url}}/productos">Listado de productos</a></p>
+    <p><a href="{{base_url}}/carrito">Ver carrito</a></p>
     <p><a href="{{base_url}}/visualizador">Visualizador de productos Tiempo Real</a></p>
   </div>
   <div
@@ -25,7 +26,7 @@
       action="/logout"
     >
       <label>
-        <input name="submit2" type="submit" id="submit2" value="log out" />
+        <input name="submit2" type="submit" id="submit2" value="Log Out" />
       </label>
     </form>
   </div></div>
