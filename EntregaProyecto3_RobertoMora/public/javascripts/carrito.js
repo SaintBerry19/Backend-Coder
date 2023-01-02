@@ -67,3 +67,30 @@ function agregarCarrito(id) {
     contenedorArray.value=text;
   }
 }
+
+function eliminarCarrito(id) {
+  let verificador = document.getElementById(`productoid` + id);
+  if (verificador) {
+    let cantidad = document.getElementById("productocantidad" + id);
+    let nuevaCantidad = document.getElementById(`quantity` + id).valueAsNumber;
+    cantidad.innerText = Number(cantidad.innerText) - nuevaCantidad;
+    ids.forEach((element)=>{
+      if (element.id===id){
+        element.cantidad = Number(cantidad.innerText)
+      }
+    })
+    if(Number(cantidad.innerText)<1){
+      verificador.remove()
+      ids = ids.filter(element=>element.id!==id)
+      let text= JSON.stringify(ids)
+      contenedorArray.value=text;
+    }
+    else{  
+      let subtotal = document.getElementById("subtotal" + id);
+      subtotal.innerText =
+      Number(cantidad.innerText) *
+      Number(document.getElementById(`precio` + id).innerText);}    
+      let text= JSON.stringify(ids)
+      contenedorArray.value=text;
+  } 
+}

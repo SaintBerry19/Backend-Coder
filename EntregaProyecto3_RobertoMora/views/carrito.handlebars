@@ -24,6 +24,7 @@
     <th style="text-align:center">Ver Detalles</th>
     <th style="text-align:center">Cantidad</th>
     <th style="text-align:center">SubTotal</th>
+    <th>Eliminar</th>
   </tr>
   {{#if isEmpty}}
     <tr>
@@ -51,6 +52,11 @@
       </td>
       <td id="cantidad{{this._id}}">{{this.cantidad}}</td>
       <td id="subTotal{{this._id}}">{{this.subtotal}}</td>
+      <td>
+        <form action="{{@root.detailUrlBase}}/{{this._id}}">
+          <button type="submit">Eliminar Producto</button>
+        </form>
+      </td>
   {{/each}}
 </table>
 
