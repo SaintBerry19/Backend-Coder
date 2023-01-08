@@ -1,0 +1,19 @@
+<h1 align="center">Generador de numeros randoms</h1>
+<div align="left"
+  style="border:2px solid white;margin-left:200px;margin-right:200px;">
+  <h1>Servidor express en {{process}}</h1>
+  <h5 style="margin-left:40px ; margin-top:40px">
+    
+    {{#each counts}}
+        <li>Numero:{{@key}} Repeticiones:{{this}}</li>
+    {{/each}}
+  </h5>
+</div>
+<p></p>
+<div align="center">
+<p><a href="{{base_url}}/home">Regresar a menu principal</a></p>
+<p><a href="{{base_url}}/ingresar">Ingresar nuevo producto</a></p>
+<p><a href="{{base_url}}/productos">Listado de productos</a></p>
+<p><a href="{{base_url}}/carrito">Ver Carrito</a></p>
+<p><a href="{{base_url}}/visualizador">Visualizador de productos Tiempo Real</a></p>
+</div>

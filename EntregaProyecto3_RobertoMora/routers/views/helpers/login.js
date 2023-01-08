@@ -43,7 +43,6 @@ login.post("/login", (req, res, next) => {
           let avatar = value[0].avatar;
           let username = req.body.username;
           req.session.username = username;
-          req.session.contador += 1;
           req.session.isAuth = true;
           let data = {
             username: {

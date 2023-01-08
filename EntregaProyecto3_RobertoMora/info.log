@@ -1,0 +1,8 @@
+{"level":"info","message":{"msg":"login"}}
+{"level":"warn","message":{"descripcion":"ruta /favicon.ico método GET  no implementada","error":-2}}
+{"level":"info","message":{"username":{"avatar":"https://images.hdqwalls.com/wallpapers/razer-logo-dark-4k-c6.jpg","base_url":"http://localhost:8080","username":"SaintBerry"}}}
+{"level":"info","message":{"base_url":"http://localhost:8080","directorio":"C:\\Users\\User\\Desktop\\No games\\Diplomado\\BackEnd Course\\Entregables\\Backend-Coder\\EntregaProyecto3_RobertoMora","execution":"C:\\Program Files\\nodejs\\node.exe","idProcess":33904,"memory":{"arrayBuffers":18354621,"external":19615921,"heapTotal":47390720,"heapUsed":43516808,"rss":89632768},"num":12,"plataform":"win32","title":"C:\\Windows\\system32\\cmd.exe ","version":"v18.10.0"}}
+{"level":"info","message":{"base_url":"http://localhost:8080","isEmpty":true,"productos":{},"username":{"contador":null,"cookie":{"expires":null,"httpOnly":true,"originalMaxAge":null,"path":"/"},"isAuth":true,"username":"SaintBerry"}}}
+{"level":"info","message":{"username":{"avatar":"https://images.hdqwalls.com/wallpapers/razer-logo-dark-4k-c6.jpg","base_url":"http://localhost:8080","username":"SaintBerry"}}}
+{"level":"info","message":{"username":{"avatar":"https://images.hdqwalls.com/wallpapers/razer-logo-dark-4k-c6.jpg","base_url":"http://localhost:8080","username":"SaintBerry"}}}
+{"level":"info","message":{"username":{"avatar":"https://images.hdqwalls.com/wallpapers/razer-logo-dark-4k-c6.jpg","base_url":"http://localhost:8080","username":"SaintBerry"}}}
