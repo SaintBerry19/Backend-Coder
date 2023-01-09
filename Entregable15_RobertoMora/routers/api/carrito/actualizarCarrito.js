@@ -2,31 +2,19 @@ import { Router } from "express";
 import { carritosDao } from "../../../daos/index.js";
 import { productosDao, usuariosDao } from "../../../daos/index.js";
 import logger from "../../../logs/logger.js";
-import { base_host } from "../../../bin/www.js";
+import { removerCarrito } from "../../../controllers/api/carrito.js";
 
 const routeractualizarcarrito = Router();
 
 routeractualizarcarrito.post("/:id/remove/:idproducto", (req, res, next) => {
   try {
-    carritosDao.listar(req.params.id).then((carrito) => {
-      let result = carrito[0].productos.filter(
-        (producto) => producto._id.toString() !== req.params.idproducto
-      );
-      let data = { productos: result };
-      carritosDao.actualizar(req.params.id, data).then((actualizar) => {
-        usuariosDao.buscar(req.session.username).then((value) => {
-          let avatar = value[0].avatar;
-          const username = {
-            username: {
-              username: req.session.username,
-              base_url: base_host,
-              avatar: avatar,
-            },
-          };
-          logger.info(actualizar);
-          res.render("menu", username);
-        });
-      });
+    removerCarrito(
+      req.params.id,
+      req.params.idproducto,
+      req.session.username
+    ).then((data) => {
+      logger.info(data.actualizar);
+      res.render("menu", data.username);
     });
   } catch (error) {
     logger.error(error);

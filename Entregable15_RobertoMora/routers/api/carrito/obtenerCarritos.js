@@ -1,13 +1,13 @@
 import { Router } from "express";
-import { carritosDao } from "../../../daos/index.js";
 import logger from '../../../logs/logger.js'
+import { obtenerCarrito,obtenerCarritos } from "../../../controllers/api/carrito.js";
 
 
 const routerobtenercarrito = Router();
 
 routerobtenercarrito.get("/", (req, res, next) => {
   try {
-    carritosDao.listarAll(req.query).then((value) => {
+    obtenerCarritos(req.query).then((value) => {
       logger.info(value)
       res.json(value);
     });
@@ -17,9 +17,9 @@ routerobtenercarrito.get("/", (req, res, next) => {
   }
 });
 
-routerobtenercarrito.get("/:id/productos", (req, res, next) => {
+routerobtenercarrito.get("/:id/carritos", (req, res, next) => {
   try {
-    carritosDao.listar(req.params.id).then((value) => {
+    obtenerCarrito(req.params.id).then((value) => {
       logger.info(value)
       res.json(value);
     });

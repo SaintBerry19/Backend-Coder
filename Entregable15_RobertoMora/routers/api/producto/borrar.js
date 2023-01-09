@@ -1,14 +1,13 @@
 import { Router } from "express";
-import { productosDao } from "../../../daos/index.js";
 import validatorAdminMiddleware from "../../../middlewares/validator-admin.js";
 import logger from '../../../logs/logger.js'
+import { borrarProducto } from "../../../controllers/api/productos.js";
 
 const routerborrar = Router();
 
 routerborrar.delete("/:id", validatorAdminMiddleware, (req, res, next) => {
   try {
-    productosDao.borrar(req.params.id).then(() => {
-      let msg= { mensaje: "Se elimino de manera correcta el producto" }
+    borrarProducto(req.params.id).then((msg) => {
       logger.info(msg)
       res.json(msg);
       res.status(204).end();
