@@ -86,11 +86,11 @@ export async function loginEntry(username, password) {
   }
 }
 
-export async function editUser(username,session) {
+export async function editUser(username, session) {
   let value = await usuariosDao.buscar(username);
   let userid = value[0]._id.toString();
   let avatar = value[0].avatar;
-  let  username2  = {
+  let username2 = {
     username: {
       username: session.username,
       base_url: base_host,
@@ -100,3 +100,11 @@ export async function editUser(username,session) {
   };
   return username2;
 }
+
+export default {
+  homeView,
+  infoView,
+  loginView,
+  loginEntry,
+  editUser,
+};

@@ -23,3 +23,11 @@ export async function actualizarMensaje(id,body){
     let value =await mensajesServices.actualizarMensaje(id,body)
     return value
 }
+
+export default{
+    crearMensaje,
+    obtenerMensaje,
+    obtenerMensajes,
+    borrarMensaje,
+    actualizarMensaje
+}

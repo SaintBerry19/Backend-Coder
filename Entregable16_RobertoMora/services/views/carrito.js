@@ -1,4 +1,4 @@
-import { carritosDao, productosDao, usuariosDao } from "../../models/dto/daos/index.js";
+import { carritosDao, usuariosDao } from "../../models/daos/index.js";
 import { base_host } from "../../bin/www.js";
 import { sms } from "../../twilio.js";
 import { whatsapptext } from "../../whatsapp.js";
@@ -84,4 +84,10 @@ export async function comprarCarrito(username) {
     carrito: actualizar,
   };
   return result;
+}
+
+export default {
+  obtenerCarrito,
+  vaciarCarrito,
+  comprarCarrito
 }

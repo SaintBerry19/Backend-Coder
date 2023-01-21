@@ -1,4 +1,4 @@
-import { carritosDao, productosDao, usuariosDao } from "../../daos/index.js";
+import { carritosDao, productosDao, usuariosDao } from "../../models/daos/index.js";
 import { base_host } from "../../bin/www.js";
 import { faker } from "@faker-js/faker/locale/es";
 
@@ -73,3 +73,10 @@ export async function visualizadorProductos(session) {
   };
   return data;
 }
+
+export default {
+  obtenerProductos,
+  obtenerProducto,
+  visualizadorProductos,
+  testProductos,
+};
