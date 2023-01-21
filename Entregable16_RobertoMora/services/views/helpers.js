@@ -1,4 +1,4 @@
-import { usuariosDao } from "../../daos/index.js";
+import { usuariosDao } from "../../models/daos/index.js";
 import { base_host } from "../../bin/www.js";
 import os from "os";
 import { isValidPassword } from "../../utils.js";

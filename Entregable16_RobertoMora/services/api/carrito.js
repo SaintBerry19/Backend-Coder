@@ -94,7 +94,7 @@ export async function removerCarrito(idcarrito, idproducto, username) {
     (producto) => producto._id.toString() !== idproducto
   );
   let data = { productos: result };
-  let newCarrito = await carritosDao.actualizar(id, data);
+  let newCarrito = await carritosDao.actualizar(idcarrito, data);
   let actualizar = new CarritoDTO(newCarrito);
   let value = await usuariosDao.buscar(username);
   let avatar = value[0].avatar;
