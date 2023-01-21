@@ -1,4 +1,6 @@
-import {mensajesDao} from '../../daos/index.js'
+import { mensajesDao } from "../../models/daos/index.js"
+import MensajeDTO from "../../models/dto/messagesDTO.js";
+
 
 export async function crearMensaje(body){
  await mensajesDao.guardar(body)
@@ -8,11 +10,11 @@ export async function crearMensaje(body){
 
 export async function obtenerMensajes(){
     let value = await mensajesDao.listarAll()
-    return value
+    return value.map(mensaje=>new MensajeDTO(mensaje))
 }
 export async function obtenerMensaje(id){
     let value = await mensajesDao.listar(id)
-    return value
+    return value.map(mensaje=>new MensajeDTO(mensaje))
 }
 
 export async function borrarMensaje(id){
@@ -23,5 +25,13 @@ export async function borrarMensaje(id){
 
 export async function actualizarMensaje(id,body){
     let value =await mensajesDao.actualizar(id,body)
-    return value
+    return new MensajeDTO(value)
+}
+
+export default{
+    crearMensaje,
+    obtenerMensaje,
+    obtenerMensajes,
+    borrarMensaje,
+    actualizarMensaje
 }

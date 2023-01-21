@@ -1,27 +1,25 @@
-import {mensajesDao} from '../../models/daos/index.js'
+import  mensajesServices  from "../../services/api/mensajes.js"
 
 export async function crearMensaje(body){
- await mensajesDao.guardar(body)
- const data = {mensaje: 'Actualizacion: Mensaje ingresado con exito'}
- return data
+let value = await mensajesServices.crearMensaje(body)
+return value
 }
 
 export async function obtenerMensajes(){
-    let value = await mensajesDao.listarAll()
+    let value = await mensajesServices.obtenerMensajes()
     return value
 }
 export async function obtenerMensaje(id){
-    let value = await mensajesDao.listar(id)
+    let value = await mensajesServices.obtenerMensaje(id)
     return value
 }
 
 export async function borrarMensaje(id){
-    await mensajesDao.borrar(id)
-    let msg={ mensaje: "Se elimino de manera correcta el mensaje" }
+    let msg=await mensajesServices.borrarMensaje(id)
     return msg
 }
 
 export async function actualizarMensaje(id,body){
-    let value =await mensajesDao.actualizar(id,body)
+    let value =await mensajesServices.actualizarMensaje(id,body)
     return value
 }
