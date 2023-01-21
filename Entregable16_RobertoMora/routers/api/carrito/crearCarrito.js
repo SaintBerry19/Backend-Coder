@@ -1,6 +1,5 @@
 import { Router } from "express";
 import { crearCarrito } from "../../../controllers/api/carrito.js";
-import { carritosDao } from "../../../daos/index.js";
 import logger from "../../../logs/logger.js";
 
 const routercrearcarrito = Router();

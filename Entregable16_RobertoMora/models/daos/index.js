@@ -1,11 +1,9 @@
-import {persistencia} from '../bin/www.js'
-
 let productosDao
 let carritosDao
 let mensajesDao
 let usuariosDao
 
-switch (persistencia) {
+switch (process.env.TIPO_PERSISTENCIA) {
     case 'json':
         const { default: ProductosDaoArchivo } = await import('./productos/ProductosDaoArchivo.js')
         const { default: CarritosDaoArchivo } = await import('./carritos/CarritosDaoArchivo.js')

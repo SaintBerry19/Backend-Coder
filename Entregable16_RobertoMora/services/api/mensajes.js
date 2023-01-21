@@ -1,4 +1,4 @@
-import {mensajesDao} from '../../models/daos/index.js'
+import {mensajesDao} from '../../daos/index.js'
 
 export async function crearMensaje(body){
  await mensajesDao.guardar(body)

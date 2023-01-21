@@ -1,7 +1,7 @@
 import { Server } from "socket.io";
 import ContenedorSQL from "./contenedores/ContenedorSQL.js";
 import * as fs from "fs";
-import { productosDao,mensajesDao } from "./daos/index.js";
+import { productosDao,mensajesDao } from "./models/daos/index.js";
 import normalizer from "./normalization.js"
 import axios from 'axios';
 import {base_host} from './bin/www.js'

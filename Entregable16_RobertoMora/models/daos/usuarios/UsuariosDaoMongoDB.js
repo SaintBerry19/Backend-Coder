@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose'
-import ContenedorMongoDB from "../../contenedores/ContenedorMongoDB.js"
+import ContenedorMongoDB from '../../../contenedores/ContenedorMongoDB.js'
 
 class UsuariosDaoMongoDB extends ContenedorMongoDB {
     constructor() {
