@@ -1,4 +1,4 @@
-import ContenedorMemoria from "../../../../contenedores/ContenedorMemoria.js"
+import ContenedorMemoria from "../../../contenedores/ContenedorMemoria.js"
 
 class MensajesDaoMem extends ContenedorMemoria {
 

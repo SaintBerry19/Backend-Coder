@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 
-import ContenedorFireBase from "../../../../contenedores/ContenedorFireBase.js";
+import ContenedorFireBase from "../../../contenedores/ContenedorFireBase.js";
 
 class CarritosDaoFireBase extends ContenedorFireBase {
   constructor() {

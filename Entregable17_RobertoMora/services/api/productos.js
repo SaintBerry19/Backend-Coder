@@ -2,8 +2,8 @@ import { productosDao } from "../../models/daos/index.js";
 import ProductsDTO from "../../models/dto/productosDTO.js";
 
 export async function crearProductos(body) {
-  await productosDao.guardar(body);
-  const data = { mensaje: "Actualizacion: Producto ingresado con exito" };
+  let producto=await productosDao.guardar(body);
+  const data = {product:producto, mensaje: "Actualizacion: Producto ingresado con exito" };
   return data;
 }
 
@@ -18,8 +18,10 @@ export async function obtenerProducto(id) {
 }
 
 export async function actualizarProducto(id,body){
-    let value= await productosDao.actualizar(id,body)
-    return new ProductsDTO(value);
+    await productosDao.actualizar(id,body)
+    let product = await productosDao.listar(id)
+    product=product[0]
+    return new ProductsDTO(product)
 }
 
 export async function borrarProducto(id){

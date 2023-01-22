@@ -1,4 +1,4 @@
-import ContenedorFireBase from "../../../../contenedores/ContenedorFireBase.js"
+import ContenedorFireBase from "../../../contenedores/ContenedorFireBase.js"
 
 class MensajesDaoFireBase extends ContenedorFireBase {
     constructor() {

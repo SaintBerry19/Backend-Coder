@@ -80,3 +80,8 @@ mejor respuesta del sevidor.
 
 En el archivo axios-test.js
 Descomentar para hacer pruebas y verificar los nuevos ids al insertar el producto.
+
+///////////////////////
+Para unit testing copiar en el archivo contenedores/ContenedorMongoDB.js
+en mongoose.connect('mongodb+srv://RobertoMora:Senoragato90.@backendcourse.83wj5zx.mongodb.net/ecommerce?retryWrites=true&w=majority'
+)

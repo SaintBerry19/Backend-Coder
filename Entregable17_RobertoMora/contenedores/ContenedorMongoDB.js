@@ -1,7 +1,8 @@
 import mongoose from 'mongoose'
 
 mongoose.set('strictQuery', true);
-await mongoose.connect(process.env.MONGODB_URI)
+await mongoose.connect('mongodb+srv://RobertoMora:Senoragato90.@backendcourse.83wj5zx.mongodb.net/ecommerce?retryWrites=true&w=majority'
+)
 
 
 class ContenedorMongoDB {

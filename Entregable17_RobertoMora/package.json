@@ -8,7 +8,8 @@
     "dev": "npx nodemon -r dotenv/config ./bin/www.js ",
     "prof": "npx nodemon -r dotenv/config --prof ./bin/www.js ",
     "inspect": "npx nodemon -r dotenv/config --inspect ./bin/www.js ",
-    "0x": "0x ./bin/www.js "
+    "0x": "0x ./bin/www.js ",
+    "mochatest": "mocha --recursive '*.test.js'"
   },
   "keywords": [],
   "author": "",
@@ -56,6 +57,10 @@
   "devDependencies": {
     "autocannon": "^7.10.0",
     "dotenv": "^16.0.3",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "sinon": "^15.0.1",
+    "supertest": "^6.3.3",
     "nodemon": "^2.0.19"
   },
   "type": "module"

@@ -27,7 +27,7 @@ await axios
 // await axios
 //   .put("http://localhost:8080/api/productos/63cd754ba159e0acfe92c8b0", {
 //     nombre: "MacBook Air M2",
-//     precio: 35000,
+//     precio: 370000,
 //   })
 //   .then((response) => console.log("PUT", response.data))
 //   .catch(console.error);
