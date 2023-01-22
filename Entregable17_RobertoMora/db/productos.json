@@ -1,0 +1,30 @@
+[
+  {
+    "nombre": "Mi Nave",
+    "precio": "500",
+    "avatar": "https://www.sams.com.mx/images/product-images/img_small/980026916s.jpg",
+    "codigo": "Mi Nave 123456",
+    "stock": "1",
+    "descripcion": ";)",
+    "id": 1
+  },
+  {
+    "nombre": "Mi Nave",
+    "precio": "15000",
+    "avatar": "https://www.sams.com.mx/images/product-images/img_small/980026916s.jpg",
+    "codigo": "Mi Nave 123456",
+    "stock": "1",
+    "descripcion": ";)",
+    "id": 2
+  },
+  {
+    "nombre": "Trapeador",
+    "precio": 256,
+    "descripcion": "Producto :)",
+    "codigo": "cod-632b30614615e037e885489e",
+    "stock": 50,
+    "avatar": "{{base_url}}/api/avatares/trapeador.jpeg",
+    "estado": "activo",
+    "id": 3
+  }
+]
