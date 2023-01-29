@@ -9,6 +9,22 @@ import path from "path";
 import { fileURLToPath } from "url";
 import expressSession from "express-session";
 import MongoStore from "connect-mongo";
+import { graphqlHTTP } from "express-graphql";
+import schema from "./graphql/schema.js";
+import {
+  createProducto,
+  getProducts,
+  getProductById,
+  updateProduct,
+  deleteProduct,
+} from "./graphql/productos.js";
+import {
+  createUsuario,
+  getUsers,
+  getUserById,
+  updateUser,
+  deleteUser,
+} from "./graphql/usuarios.js";
 
 const app = express();
 // import sessionFileStore from 'session-file-store'
@@ -35,7 +51,6 @@ app.use(
   })
 );
 
-
 app.use(cors());
 app.use(express.static(path.join(__dirname, "public/")));
 app.use("/api/avatares", express.static(path.join(__dirname, "pictures/")));
@@ -47,9 +62,26 @@ app.use(morgan("dev"));
 app.engine("handlebars", handlebars.engine());
 app.set("view engine", "handlebars");
 app.set("views", "./views");
-
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema,
+    rootValue: {
+      createProducto,
+      createUsuario,
+      getProducts,
+      getUsers,
+      getProductById,
+      getUserById,
+      updateProduct,
+      updateUser,
+      deleteProduct,
+      deleteUser,
+    },
+    graphiql: true,
+  })
+);
 app.use("/api", routerapi);
 app.use("/", routerviews);
-
 
 export default app;

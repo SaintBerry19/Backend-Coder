@@ -29,11 +29,13 @@
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
     "firebase": "^9.13.0",
     "firebase-admin": "^11.2.0",
     "forever": "^4.0.3",
+    "graphql": "^15.8.0",
     "joi": "^17.6.0",
     "knex": "^2.3.0",
     "lodash": "^4.17.21",
@@ -56,12 +58,12 @@
   },
   "devDependencies": {
     "autocannon": "^7.10.0",
-    "dotenv": "^16.0.3",
     "chai": "^4.3.7",
+    "dotenv": "^16.0.3",
     "mocha": "^10.2.0",
+    "nodemon": "^2.0.19",
     "sinon": "^15.0.1",
-    "supertest": "^6.3.3",
-    "nodemon": "^2.0.19"
+    "supertest": "^6.3.3"
   },
   "type": "module"
 }

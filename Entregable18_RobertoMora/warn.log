@@ -1,3 +1,5 @@
 {"level":"warn","message":{"descripcion":"ruta /favicon.ico método GET  no implementada","error":-2}}
 {"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 2-20020aca0602000000b0036508145326sm9861922oig.9 - gsmtp","responseCode":535}
 {"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"535 Authentication failed","responseCode":535}
+{"level":"warn","message":{"descripcion":"ruta /favicon.ico método GET  no implementada","error":-2}}
+{"level":"warn","message":{"descripcion":"ruta /graphql método GET  no implementada","error":-2}}
