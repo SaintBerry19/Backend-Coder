@@ -1,0 +1,463 @@
+{
+	"info": {
+		"_postman_id": "5aaf213e-32b8-4af0-9337-04087c19b3e1",
+		"name": "ProyectoSails",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23337857"
+	},
+	"item": [
+		{
+			"name": "PRODUCTOS",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/productos/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"productos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63db0d2bbd5ded71d47e158f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"nombre\": \"Mi Nave 2\",\n        \"precio\": 15000,\n        \"avatar\": \"https://www.sams.com.mx/images/product-images/img_small/980026916s.jpg\",\n        \"codigo\": \"Mi Nave :)\",\n        \"stock\": 55,\n        \"descripcion\": \";)\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"nombre\": \"Mi Nave 3\",\n        \"precio\": 15000,\n        \"avatar\": \"https://www.sams.com.mx/images/product-images/img_small/980026916s.jpg\",\n        \"codigo\": \"Mi Nave :)\",\n        \"stock\": 55,\n        \"descripcion\": \";)\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/productos/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"productos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63db0deabd5ded71d47e1590"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USUARIOS",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/usuarios/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/usuarios/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"usuarios",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63db0f6fdcd9a1046890fc55"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n    {\n        \"firstname\":\"Roberto\",\n        \"lastname\":\"Mora\",\n        \"username\": \"SaintBerry\",\n        \"password\":\"prueba1\",\n        \"age\":27,\n        \"avatar\": \"https://scontent.fgdl9-1.fna.fbcdn.net/v/t39.30808-6/310151178_603810138079331_6849329156213879897_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=S8jcctNIgCsAX_fff6U&_nc_ht=scontent.fgdl9-1.fna&oh=00_AfDWu5S0rb0v1d4WLo5TXw07zn2UbKMlO-21LwtLi8uc3A&oe=63DF86AA\",\n        \"email\": \"robertomorab.19@gmail.com\",\n        \"phone\": \"8332183271\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n    {\n        \"firstname\":\"Roberto\",\n        \"lastname\":\"Mora\",\n        \"username\": \"SaintBerry\",\n        \"password\":\"prueba1\",\n        \"age\":27,\n        \"avatar\": \"https://scontent.fgdl9-1.fna.fbcdn.net/v/t39.30808-6/310151178_603810138079331_6849329156213879897_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=S8jcctNIgCsAX_fff6U&_nc_ht=scontent.fgdl9-1.fna&oh=00_AfDWu5S0rb0v1d4WLo5TXw07zn2UbKMlO-21LwtLi8uc3A&oe=63DF86AA\",\n        \"email\": \"robertomorab.19@gmail.com\",\n        \"phone\": \"8332183271\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/usuarios/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"usuarios",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63db0f6fdcd9a1046890fc55"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MENSAJES",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/mensajes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"mensajes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/mensajes/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"mensajes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63db12f2dcd9a1046890fc56"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"message\": \"Prueba de sail js\",\n        \"author\": {\n            \"id\": \"robertomorab.19@gmail.com\",\n            \"nombre\": \"Roberto\",\n            \"apellido\": \"Mora\",\n            \"edad\": 27,\n            \"alias\": \"Saint Berry\",\n            \"avatar\": \"https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2021/07/01091502/abstract_digital-gamepad-sl-800x450.jpg\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/mensajes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"mensajes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"message\": \"Prueba de sail js modified\",\n        \"author\": {\n            \"id\": \"robertomorab.19@gmail.com\",\n            \"nombre\": \"Roberto\",\n            \"apellido\": \"Mora\",\n            \"edad\": 27,\n            \"alias\": \"Saint Berry\",\n            \"avatar\": \"https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2021/07/01091502/abstract_digital-gamepad-sl-800x450.jpg\"}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/mensajes/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"mensajes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63db12f2dcd9a1046890fc56"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CARRITOS",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/carritos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"carritos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/carritos/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"carritos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63db165cdcd9a1046890fc57"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"userid\": \"63db0f6fdcd9a1046890fc55\",\n        \"productos\": [\n    {\n        \"createdAt\": 1675300139083,\n        \"updatedAt\": 1675300139083,\n        \"id\": \"63db0d2bbd5ded71d47e158f\",\n        \"nombre\": \"Mi Nave\",\n        \"precio\": 1500,\n        \"avatar\": \"https://www.sams.com.mx/images/product-images/img_small/980026916s.jpg\",\n        \"codigo\": \"Mi Nave :)\",\n        \"stock\": 5,\n        \"descripcion\": \";)\"\n    },\n    {\n        \"createdAt\": 1675300330585,\n        \"updatedAt\": 1675301756398,\n        \"id\": \"63db0deabd5ded71d47e1590\",\n        \"nombre\": \"Mi Nave 3\",\n        \"precio\": 15000,\n        \"avatar\": \"https://www.sams.com.mx/images/product-images/img_small/980026916s.jpg\",\n        \"codigo\": \"Mi Nave :)\",\n        \"stock\": 55,\n        \"descripcion\": \";)\"\n    }\n]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/carritos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"carritos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"userid\": \"63db0f6fdcd9a1046890fc55\",\n        \"productos\": [\n    {\n        \"createdAt\": 1675300139083,\n        \"updatedAt\": 1675300139083,\n        \"id\": \"63db0d2bbd5ded71d47e158f\",\n        \"nombre\": \"Mi Nave\",\n        \"precio\": 1500,\n        \"avatar\": \"https://www.sams.com.mx/images/product-images/img_small/980026916s.jpg\",\n        \"codigo\": \"Mi Nave :)\",\n        \"stock\": 15,\n        \"descripcion\": \";)\"\n    },\n    {\n        \"createdAt\": 1675300330585,\n        \"updatedAt\": 1675301756398,\n        \"id\": \"63db0deabd5ded71d47e1590\",\n        \"nombre\": \"Mi Nave 3\",\n        \"precio\": 15000,\n        \"avatar\": \"https://www.sams.com.mx/images/product-images/img_small/980026916s.jpg\",\n        \"codigo\": \"Mi Nave :)\",\n        \"stock\": 525,\n        \"descripcion\": \";)\"\n    }\n]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/carritos/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"carritos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63db165cdcd9a1046890fc57"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
