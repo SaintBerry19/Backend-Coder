@@ -3,3 +3,8 @@
 {"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"535 Authentication failed","responseCode":535}
 {"level":"warn","message":{"descripcion":"ruta /favicon.ico método GET  no implementada","error":-2}}
 {"level":"warn","message":{"descripcion":"ruta /graphql método GET  no implementada","error":-2}}
+{"level":"warn","message":{"descripcion":"ruta /favicon.ico método GET  no implementada","error":-2}}
+{"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"535 Authentication failed","responseCode":535}
+{"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"535 Authentication failed","responseCode":535}
+{"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"535 Authentication failed","responseCode":535}
+{"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"535 Authentication failed","responseCode":535}

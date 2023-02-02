@@ -4,7 +4,7 @@ import ContenedorMongoDB from '../../../contenedores/ContenedorMongoDB.js'
 class UsuariosDaoMongoDB extends ContenedorMongoDB {
     constructor() {
         super('Usuarios', new Schema({
-            fistname: { type: String, require: true },
+            firstname: { type: String, require: true },
             lastname: { type: String, require: true },
             username:{ type: String, unique: true },
             password:{ type: String, require: true },
