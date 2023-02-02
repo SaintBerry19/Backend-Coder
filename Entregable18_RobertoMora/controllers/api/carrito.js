@@ -6,12 +6,12 @@ export async function crearCarrito() {
 }
 
 export async function obtenerCarritos(query) {
-  let value = await carritoServices.listarAll(query);
+  let value = await carritoServices.obtenerCarritos(query);
   return value;
 }
 
 export async function obtenerCarrito(id) {
-  let value = await carritoServices.listar(id);
+  let value = await carritoServices.obtenerCarrito(id);
   return value;
 }
 
