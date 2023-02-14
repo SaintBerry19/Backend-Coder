@@ -67,7 +67,6 @@
     valorcompresion(result)
   });
 
-  // Empieza la parte de producto
   const appendProduct = (data) => {
     const productsTable = document.querySelector(".productsTable");
     let productsTableBodyRow = document.createElement("tr");

@@ -5,7 +5,7 @@ import logger from './logs/logger.js'
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   port: 587,
-  secure: false, // use SSL
+  secure: false, 
   auth: {
     user: process.env.PASS_GMAIL,
     pass: process.env.USER_GMAIL,

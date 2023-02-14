@@ -32,18 +32,6 @@ export default function normalizer(mensajes) {
   const origsize = JSON.stringify(data).length;
   const normsize = JSON.stringify(dataNormalized).length;
   const denormsize = JSON.stringify(dataDenormalized).length;
-
-  // console.log(origsize)
-  // print(data)
-  // console.log("/////////////////////////////////////")
-  // console.log(normsize)
-  // print(dataNormalized)
-  // console.log("/////////////////////////////////////")
-  // console.log(denormsize)
-  // print(dataDenormalized)
-  
-
-
   const result = ((normsize * 100) / origsize).toFixed(2);
   return result
 }

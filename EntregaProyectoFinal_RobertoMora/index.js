@@ -27,20 +27,12 @@ import {
 } from "./graphql/usuarios.js";
 
 const app = express();
-// import sessionFileStore from 'session-file-store'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// const FileStore = sessionFileStore(expressSession)
-
 app.use(
   expressSession({
-    // store: new FileStore({
-    //   path: "../sessions", // El directorio donde se almacenarán los archivos de la sesión. El valor predeterminado es ./sessions
-    //   ttl: 600, // Tiempo de vida de la sesión en segundos. Predeterminado a 3600
-    //   retries: 2, // El número de reintentos para obtener datos de sesión de un archivo de sesión. Predeterminado a 5
-    // }),
     store: new MongoStore({
       mongoUrl: process.env.MONGODB_URI,
       ttl: 600,
