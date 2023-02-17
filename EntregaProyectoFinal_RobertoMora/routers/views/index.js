@@ -11,9 +11,10 @@ import registro from '../views/helpers/registro.js'
 import carrito from '../views/carrito/obtener.js'
 import user from '../views/helpers/user.js'
 import logger from '../../logs/logger.js'
+import carritoActualizar from '../views/carrito/actualizar.js'
 
 const routerviews = Router()
-routerviews.use('/',ingresar,visualizador,obtener,test,login,home,logout,registro,info,user,carrito)
+routerviews.use('/',ingresar,visualizador,obtener,test,login,home,logout,registro,info,user,carrito,carritoActualizar)
 
 routerviews.get('/', (req, res, next) => {
   try {

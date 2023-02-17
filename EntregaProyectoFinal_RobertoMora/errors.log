@@ -4,3 +4,6 @@
 {"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"535 Authentication failed","responseCode":535}
 {"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"535 Authentication failed","responseCode":535}
 {"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"535 Authentication failed","responseCode":535}
+{"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"535 Authentication failed","responseCode":535}
+{"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials n127-20020acaef85000000b00364e8f85c08sm1201422oih.21 - gsmtp","responseCode":535}
+{"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"535-5.7.8 Username and Password not accepted. Learn more at\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials o124-20020acad782000000b0036e9160f57csm1204698oig.20 - gsmtp","responseCode":535}

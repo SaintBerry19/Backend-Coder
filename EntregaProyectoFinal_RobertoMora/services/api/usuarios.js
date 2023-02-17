@@ -55,7 +55,7 @@ export async function actualizarUsuario(id, data, username) {
   let avatar = value[0].avatar;
   const username2 = {
     username: {
-      username: req.session.username,
+      username: username,
       base_url: base_host,
       avatar: avatar,
     },

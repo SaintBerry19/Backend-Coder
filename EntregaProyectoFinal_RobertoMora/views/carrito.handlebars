@@ -72,7 +72,7 @@
       <td id="cantidad{{this._id}}">{{this.cantidad}}</td>
       <td id="subTotal{{this._id}}">{{this.subtotal}}</td>
       <td>
-        <form action="api/carrito/{{@root.carritoid}}/remove/{{this._id}}"  method="post">
+        <form action="carrito/{{@root.carritoid}}/remove/{{this._id}}"  method="post">
           <button type="submit">Eliminar Producto</button>
         </form>
       </td>

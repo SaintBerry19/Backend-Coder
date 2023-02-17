@@ -1,11 +1,12 @@
 import { Router } from "express";
 import logger from '../../../logs/logger.js'
 import { obtenerCarrito,obtenerCarritos } from "../../../controllers/api/carrito.js";
+import authorizationJwt from "../../../middlewares/authorization-jwt.js";
 
 
 const routerobtenercarrito = Router();
 
-routerobtenercarrito.get("/", (req, res, next) => {
+routerobtenercarrito.get("/", authorizationJwt,(req, res, next) => {
   try {
     obtenerCarritos(req.query).then((value) => {
       logger.info(value)
@@ -17,7 +18,7 @@ routerobtenercarrito.get("/", (req, res, next) => {
   }
 });
 
-routerobtenercarrito.get("/:id/carritos", (req, res, next) => {
+routerobtenercarrito.get("/:id/carritos",authorizationJwt, (req, res, next) => {
   try {
     obtenerCarrito(req.params.id).then((value) => {
       logger.info(value)

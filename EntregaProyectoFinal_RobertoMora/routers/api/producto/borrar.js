@@ -2,10 +2,11 @@ import { Router } from "express";
 import validatorAdminMiddleware from "../../../middlewares/validator-admin.js";
 import logger from '../../../logs/logger.js'
 import { borrarProducto } from "../../../controllers/api/productos.js";
+import authorizationJwt from "../../../middlewares/authorization-jwt.js";
 
 const routerborrar = Router();
 
-routerborrar.delete("/:id", validatorAdminMiddleware, (req, res, next) => {
+routerborrar.delete("/:id", authorizationJwt,validatorAdminMiddleware, (req, res, next) => {
   try {
     borrarProducto(req.params.id).then((msg) => {
       logger.info(msg)

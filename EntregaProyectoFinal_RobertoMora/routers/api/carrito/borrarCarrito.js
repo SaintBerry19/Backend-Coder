@@ -1,10 +1,11 @@
 import { Router } from "express";
 import logger from "../../../logs/logger.js";
 import { borrarCarrito } from "../../../controllers/api/carrito.js";
+import authorizationJwt from "../../../middlewares/authorization-jwt.js";
 
 const routerborrarcarrito = Router();
 
-routerborrarcarrito.delete("/:id", (req, res, next) => {
+routerborrarcarrito.delete("/:id", authorizationJwt,(req, res, next) => {
   try {
     borrarCarrito(req.params.id).then((msg) => {
       logger.info(msg);

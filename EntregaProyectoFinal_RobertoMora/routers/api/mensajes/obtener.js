@@ -1,11 +1,12 @@
 import { Router } from 'express'
 import { obtenerMensaje, obtenerMensajes } from '../../../controllers/api/mensajes.js'
 import logger from '../../../logs/logger.js'
+import authorizationJwt from '../../../middlewares/authorization-jwt.js'
 
 
 const routerobtenermensajes = Router()
 
-routerobtenermensajes.get('/', (req, res, next) => {
+routerobtenermensajes.get('/',authorizationJwt, (req, res, next) => {
   try {
     obtenerMensajes().then((value)=>{  
       logger.info(value)

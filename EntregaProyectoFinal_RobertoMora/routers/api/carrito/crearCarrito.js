@@ -1,10 +1,11 @@
 import { Router } from "express";
 import { crearCarrito } from "../../../controllers/api/carrito.js";
 import logger from "../../../logs/logger.js";
+import authorizationJwt from "../../../middlewares/authorization-jwt.js";
 
 const routercrearcarrito = Router();
 
-routercrearcarrito.post("/", (req, res, next) => {
+routercrearcarrito.post("/", authorizationJwt,(req, res, next) => {
   try {
     crearCarrito().then((carrito) => {
       logger.info(carrito);
