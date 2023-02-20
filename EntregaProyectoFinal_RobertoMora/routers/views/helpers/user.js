@@ -1,7 +1,7 @@
 import { Router } from "express";
 import logger from "../../../logs/logger.js";
 import { editUser } from "../../../controllers/views/helpers.js";
-import { actualizarUsuario } from "../../../controllers/api/usuarios.js";
+import { actualizarUsuario } from "../../../controllers/views/helpers.js";
 
 const user = Router();
 

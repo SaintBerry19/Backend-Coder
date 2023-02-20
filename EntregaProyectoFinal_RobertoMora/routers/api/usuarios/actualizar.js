@@ -6,8 +6,8 @@ import authorizationJwt from "../../../middlewares/authorization-jwt.js";
 
 const routeractualizarusuarios = Router();
 
-routeractualizarusuarios.post(
-  "/:id/update",
+routeractualizarusuarios.put(
+  "/:id",
   validatorAdminMiddleware,authorizationJwt,
   (req, res, next) => {
     try {

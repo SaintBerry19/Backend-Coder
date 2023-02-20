@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import { base_host } from '../../../bin/www.js'
 import logger from "../../../logs/logger.js";
-import { crearUsuario } from "../../../controllers/api/usuarios.js";
+import { crearUsuario } from '../../../controllers/views/helpers.js';
 
 const registro = Router()
 

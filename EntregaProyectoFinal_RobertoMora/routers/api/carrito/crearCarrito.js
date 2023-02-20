@@ -5,9 +5,9 @@ import authorizationJwt from "../../../middlewares/authorization-jwt.js";
 
 const routercrearcarrito = Router();
 
-routercrearcarrito.post("/", authorizationJwt,(req, res, next) => {
+routercrearcarrito.post("/:userid", authorizationJwt,(req, res, next) => {
   try {
-    crearCarrito().then((carrito) => {
+    crearCarrito(req.params.userid).then((carrito) => {
       logger.info(carrito);
       res.json(carrito);
       res.status(204).end();

@@ -25,10 +25,22 @@ export async function editUser(username, session) {
   return result;
 }
 
+export async function actualizarUsuario(id, data, username) {
+  let value = await helpersServices.actualizarUsuario(id, data, username);
+  return value;
+}
+
+export async function crearUsuario(body) {
+  let data = await helpersServices.crearUsuario(body);
+  return data;
+}
+
 export default {
   homeView,
   infoView,
   loginView,
   loginEntry,
   editUser,
+  actualizarUsuario,
+  crearUsuario
 };

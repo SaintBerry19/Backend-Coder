@@ -1,8 +1,6 @@
 import { Router } from "express";
-
 import logger from "../../../logs/logger.js";
 import { loginView, loginEntry } from "../../../controllers/views/helpers.js";
-import { generateToken } from "../../../utils.js";
 
 const login = Router();
 
@@ -30,8 +28,6 @@ login.post("/login", (req, res, next) => {
         req.session.username = req.body.username;
         req.session.isAuth = true;
         logger.info(data);
-        let token={ access_token: generateToken(req.body.username) }
-        console.log(token);
         res.render("menu", data);
       } else {
         logger.info(data);

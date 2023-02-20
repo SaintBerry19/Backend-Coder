@@ -1,7 +1,6 @@
 import { Router } from "express";
 import logger from "../../../logs/logger.js";
-import { actualizarCarrito, removerCarrito } from "../../../controllers/api/carrito.js";
-
+import { actualizarCarrito,removerCarrito } from "../../../controllers/views/carrito.js";
 const carritoActualizar = Router();
 
 carritoActualizar.post("/carrito/:id/remove/:idproducto", (req, res, next) => {

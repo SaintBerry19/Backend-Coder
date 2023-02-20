@@ -1,7 +1,39 @@
-import { usuariosDao } from "../../models/daos/index.js";
+import { usuariosDao,carritosDao } from "../../models/daos/index.js";
 import { base_host } from "../../bin/www.js";
 import os from "os";
 import { isValidPassword } from "../../utils.js";
+import { encryptPassword } from "../../utils.js";
+import UserDTO from "../../models/dto/userDTO.js";
+import sendMail from "../../gmail.js";
+
+export async function crearUsuario(body) {
+  let value = await usuariosDao.buscar(body.username);
+  if (value.length > 0) {
+    const data = {
+      mensaje: "Username ya utilizado",
+      base_url: base_host,
+      autorizado: false,
+    };
+    return data;
+  } else {
+    const newUser = {
+      ...body,
+      password: encryptPassword(body.password),
+    };
+    let value = await usuariosDao.guardar(newUser);
+    let usuario = new UserDTO(value);
+    let userid = { userid: usuario._id.toString() };
+    const data = {
+      mensaje:
+        "Actualizacion: Usuario ingresado con exito, puede iniciar sesion",
+      base_url: base_host,
+      autorizado: true,
+    };
+    await carritosDao.guardar(userid);
+    sendMail(newUser);
+    return data;
+  }
+}
 
 export async function homeView(username) {
   let value = await usuariosDao.buscar(username);
@@ -101,10 +133,29 @@ export async function editUser(username, session) {
   return username2;
 }
 
+export async function actualizarUsuario(id, data, username) {
+  let body = { ...data, password: encryptPassword(data.password) };
+  await usuariosDao.actualizar(id, body);
+  let value = await usuariosDao.buscar(username);
+  let avatar = value[0].avatar;
+  const username2 = {
+    username: {
+      username: username,
+      base_url: base_host,
+      avatar: avatar,
+    },
+  };
+  return username2;
+}
+
+
+
 export default {
   homeView,
   infoView,
   loginView,
   loginEntry,
   editUser,
+  actualizarUsuario,
+  crearUsuario
 };

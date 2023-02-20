@@ -1,0 +1,839 @@
+{
+	"info": {
+		"_postman_id": "14aea5a3-1a74-49b3-821c-254974419517",
+		"name": "ProyectoBackEnd",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23337857"
+	},
+	"item": [
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Productos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/productos/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Productos ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/productos/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63eed6ab51b4648b084c3df7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Canasta\",\r\n    \"precio\":\"122\",\r\n    \"avatar\":\"https://m.media-amazon.com/images/I/81DmXimQRlL._AC_SX425_.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/productos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Producto ID Actualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Canasta\",\r\n    \"precio\":\"12255\",\r\n    \"avatar\":\"https://m.media-amazon.com/images/I/81DmXimQRlL._AC_SX425_.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/productos/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63f3a54a22c6f7b1446527ab"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Producto ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/productos/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63f3adef74f0fba85cc5d156"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeSIsImlhdCI6MTY3NjkxNDcxNiwiZXhwIjoxNjc3MDAxMTE2fQ.SwcKdJucwjZdmvT2EfvIQRCW2gSkoyVzzFCNaOMaM1w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/usuarios/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UsuariosID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/usuarios/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63f3a9409e833cf4b65024eb"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\":\"Roberto\",\r\n    \"lastname\":\"Mora Balderas2\",\r\n    \"username\":\"SaintBerry191\",\r\n    \"password\":\"loco1\",\r\n    \"age\":28,\r\n    \"phone\":\"8332183271\",\r\n    \"avatar\":\"https://www.google.com/url?sa=i&url=http%3A%2F%2Ft3.gstatic.com%2Flicensed-image%3Fq%3Dtbn%3AANd9GcS-OZTPpZNsnOchlOMmYsSeMprn5sYU4kdOZGPL0_ksM2nHGegFrzLhGlQMBF-amQqPRFs4DzbLrI_o5gA&psig=AOvVaw12Rx4TXaWHdDwLQ84rx-e8&ust=1676681824873000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCIihiNasm_0CFQAAAAAdAAAAABAE\",\r\n    \"email\":\"robertomorab.1921@gmail.com\",\r\n    \"status\":\"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/usuarios",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario ID Actualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\":\"Roberto\",\r\n    \"lastname\":\"Mora Balderas223452345\",\r\n    \"password\":\"loco123452345\",\r\n    \"age\":28,\r\n    \"phone\":\"83321832345234123123123123123123125234571\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/usuarios/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63f3a9409e833cf4b65024eb"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/usuarios/:usuarioid",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuarios",
+								":usuarioid"
+							],
+							"variable": [
+								{
+									"key": "usuarioid",
+									"value": "63f3a9409e833cf4b65024eb"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mensajes",
+			"item": [
+				{
+					"name": "Mensajes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/mensajes/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mensajes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mensajes ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/mensajes/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mensajes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63695d37dadaae43c7cea103"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mensajes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"message\": \"Mucho Gusto 123!\",\r\n        \"author\": {\r\n            \"id\": \"robertomorab.19@gmail.com\",\r\n            \"nombre\": \"Roberto\",\r\n            \"apellido\": \"Mora\",\r\n            \"edad\": 26,\r\n            \"alias\": \"Saint Berry\",\r\n            \"avatar\": \"https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2021/07/01091502/abstract_digital-gamepad-sl-800x450.jpg\"\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/mensajes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mensajes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mensajes ID Actualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"message\": \"ah perro 1212!\",\r\n        \"author\": {\r\n            \"id\": \"robertomorab.19@gmail.com\",\r\n            \"nombre\": \"Roberto\",\r\n            \"apellido\": \"Mora123123\",\r\n            \"edad\": 26,\r\n            \"alias\": \"Saint Berry\",\r\n            \"avatar\": \"https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2021/07/01091502/abstract_digital-gamepad-sl-800x450.jpg\"\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/mensajes/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mensajes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63f3ae6374f0fba85cc5d15c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Producto ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzkzLCJleHAiOjE2NzY5OTgxOTN9.ipovkL14lF4ueus2nM-b5MAAxY7LOf5CmLtfcz2_5fU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/mensajes/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"mensajes",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63f3ae6374f0fba85cc5d15c"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carritos",
+			"item": [
+				{
+					"name": "Ver Carritos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTE0NzgyLCJleHAiOjE2NzcwMDExODJ9.lOKuW9BEGlx9xHYnreh5XoO6forFMv8NGraCNZxd9a8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/carrito",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver Carritos ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTE0NzgyLCJleHAiOjE2NzcwMDExODJ9.lOKuW9BEGlx9xHYnreh5XoO6forFMv8NGraCNZxd9a8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/carrito/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63eed0f1f2c7f25c262c647f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Carrito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTE0NzgyLCJleHAiOjE2NzcwMDExODJ9.lOKuW9BEGlx9xHYnreh5XoO6forFMv8NGraCNZxd9a8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/carrito/:userid",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								":userid"
+							],
+							"variable": [
+								{
+									"key": "userid",
+									"value": "63eed0f1f2c7f25c262c647d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Carrito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTE0NzgyLCJleHAiOjE2NzcwMDExODJ9.lOKuW9BEGlx9xHYnreh5XoO6forFMv8NGraCNZxd9a8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"userid\": \"63eed0f1f2c7f25c262c647d\",\n        \"productos\": [\n    {\n        \"_id\": \"63eed6ab51b4648b084c3df7\",\n        \"nombre\": \"Gato\",\n        \"precio\": 25000,\n        \"avatar\": \"https://www.google.com/url?sa=i&url=http%3A%2F%2Ft3.gstatic.com%2Flicensed-image%3Fq%3Dtbn%3AANd9GcS-OZTPpZNsnOchlOMmYsSeMprn5sYU4kdOZGPL0_ksM2nHGegFrzLhGlQMBF-amQqPRFs4DzbLrI_o5gA&psig=AOvVaw12Rx4TXaWHdDwLQ84rx-e8&ust=1676681824873000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCIihiNasm_0CFQAAAAAdAAAAABAE\",\n        \"codigo\": \"1230\",\n        \"stock\": 1,\n        \"descripcion\": \"Meow\"\n    }\n\n\n        ]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/carrito/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63eed0f1f2c7f25c262c647f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Carrito",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTE0NzgyLCJleHAiOjE2NzcwMDExODJ9.lOKuW9BEGlx9xHYnreh5XoO6forFMv8NGraCNZxd9a8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/carrito/:id/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								":id",
+								""
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63eed0f1f2c7f25c262c647f"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sesion",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"SaintBerry19\",\n    \"password\":\"loco\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiU2FpbnRCZXJyeTE5IiwiaWF0IjoxNjc2OTExNzY5LCJleHAiOjE2NzY5OTgxNjl9.OGfvK2E8XXLUEywNYYJwnnqWPADkeFsENhpTpCCpVaU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

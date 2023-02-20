@@ -1,7 +1,6 @@
-import { carritosDao,usuariosDao } from "../../models/daos/index.js";
+import { usuariosDao } from "../../models/daos/index.js";
 import { base_host } from "../../bin/www.js";
 import { encryptPassword } from "../../utils.js";
-import sendMail from "../../mails.js";
 import UserDTO from "../../models/dto/userDTO.js";
 
 export async function crearUsuario(body) {
@@ -20,15 +19,14 @@ export async function crearUsuario(body) {
     };
     let value = await usuariosDao.guardar(newUser);
     let usuario = new UserDTO(value);
-    let userid = { userid: usuario._id.toString() };
     const data = {
       mensaje:
         "Actualizacion: Usuario ingresado con exito, puede iniciar sesion",
       base_url: base_host,
       autorizado: true,
+      usuario:usuario
     };
-    await carritosDao.guardar(userid);
-    sendMail(newUser);
+
     return data;
   }
 }
@@ -44,23 +42,14 @@ export async function obtenerUsuario(id) {
 
 export async function borrarUsuario(id) {
   await usuariosDao.borrar(id);
-  let msg = { mensaje: "Se elimino de manera correcta el producto" };
+  let msg = { mensaje: "Se elimino de manera correcta el usuario" };
   return msg;
 }
 
 export async function actualizarUsuario(id, data, username) {
   let body = { ...data, password: encryptPassword(data.password) };
-  await usuariosDao.actualizar(id, body);
-  let value = await usuariosDao.buscar(username);
-  let avatar = value[0].avatar;
-  const username2 = {
-    username: {
-      username: username,
-      base_url: base_host,
-      avatar: avatar,
-    },
-  };
-  return username2;
+  let result=await usuariosDao.actualizar(id, body);
+  return result;
 }
 
 export default {

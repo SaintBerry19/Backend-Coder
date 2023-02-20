@@ -24,8 +24,9 @@ export async function borrarMensaje(id){
 }
 
 export async function actualizarMensaje(id,body){
-    let value =await mensajesDao.actualizar(id,body)
-    return new MensajeDTO(value)
+    await mensajesDao.actualizar(id,body)
+    let value = await mensajesDao.listar(id)
+    return new MensajeDTO(value[0])
 }
 
 export default{

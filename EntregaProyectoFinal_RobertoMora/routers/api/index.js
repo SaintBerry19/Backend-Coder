@@ -16,13 +16,15 @@ import routerobtenerusarios from './usuarios/obtener.js'
 import routeractualizarusuarios from './usuarios/actualizar.js'
 import routerborrarusuarios from './usuarios/borrar.js'
 import random from './helpers/random.js'
-import login from '../views/helpers/login.js'
 import logger from '../../logs/logger.js'
+import loginapi from './helpers/login.js'
+import logoutapi from './helpers/logout.js'
 
 
 const routerapi = Router()
     
-    routerapi.use('/', login)
+    routerapi.use('/login', loginapi)
+    routerapi.use('/logout', logoutapi)
     routerapi.use('/random', random)
     routerapi.use('/productos', routercrear, routerobtener, routeractualizar, routerborrar)
     routerapi.use('/mensajes', routercrearmensajes, routerobtenermensajes, routeractualizarmensajes, routerborrarmensajes)

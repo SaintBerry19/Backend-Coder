@@ -1,7 +1,7 @@
 import carritoServices from "../../services/api/carrito.js";
 
-export async function crearCarrito() {
-  let carrito = carritoServices.crearCarrito;
+export async function crearCarrito(userid) {
+  let carrito = carritoServices.crearCarrito(userid);
   return carrito;
 }
 
@@ -15,18 +15,13 @@ export async function obtenerCarrito(id) {
   return value;
 }
 
-export async function actualizarCarrito(array, id, username) {
- let value = await carritoServices.actualizarCarrito(array, id, username);
+export async function actualizarCarrito(array, id) {
+ let value = await carritoServices.actualizarCarrito(array, id);
  return value;
 }
 
-export async function removerCarrito(idcarrito, idproducto, username) {
-  let value = await carritoServices.removerCarrito(idcarrito, idproducto, username);
-  return value;
- }
-
 export async function borrarCarrito(id) {
-  await carritosDao.borrar(id);
+  await  carritoServices.borrarCarrito(id);
   let msg= {mensaje:'Se borro el carrito con exito'}
   return msg;
 }
@@ -37,5 +32,4 @@ export default {
   obtenerCarrito,
   actualizarCarrito,
   borrarCarrito,
-  removerCarrito,
 };

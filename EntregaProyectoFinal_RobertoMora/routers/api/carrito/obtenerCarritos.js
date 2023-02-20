@@ -18,7 +18,7 @@ routerobtenercarrito.get("/", authorizationJwt,(req, res, next) => {
   }
 });
 
-routerobtenercarrito.get("/:id/carritos",authorizationJwt, (req, res, next) => {
+routerobtenercarrito.get("/:id",authorizationJwt, (req, res, next) => {
   try {
     obtenerCarrito(req.params.id).then((value) => {
       logger.info(value)
